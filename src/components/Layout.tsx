@@ -17,7 +17,7 @@ export default function Layout({ children }: LayoutProps) {
     >
       <Navbar />
 
-      <div style={{ minHeight: `calc(${window.innerHeight}px - 155px)` }}>
+      <div style={{ height: `calc(${window.innerHeight}px - 175px)`, overflow: 'scroll' }}>
         {children}
       </div>
 
@@ -30,6 +30,7 @@ export default function Layout({ children }: LayoutProps) {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
+          marginTop: '20px',
         }}
       >
         <p style={{ width: '67%', color: 'white', fontSize:'12px', fontWeight: 'bold' }}>

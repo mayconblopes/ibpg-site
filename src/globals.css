@@ -10,4 +10,5 @@
 
 html, body {
     min-height: 100%;
+    min-height: -webkit-fill-available;
 }
