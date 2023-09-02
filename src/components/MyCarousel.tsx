@@ -27,11 +27,7 @@ export default function MyCarousel({ items }: any) {
       >
         {items}
 
-        {/* // [
-          //     <Evento title='Ele vira!' date='21/05/2022' cover='https://i.stack.imgur.com/sDDjX.jpg?s=64&g=1' />,
-          //     <Evento title='Ele já veio!' date='21/05/2023' cover='https://images.pexels.com/photos/10283517/pexels-photo-10283517.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load' />,
-          //     <Evento title='Ele retorna!' date='21/05/2022' cover='https://i.stack.imgur.com/sDDjX.jpg?s=64&g=1' />,
-          // ] */}
+        
       </Carousel>
     )
   }
