@@ -17,8 +17,18 @@
     "@mui/material": "^5.14.5",
     "@mui/system": "^5.14.5",
     "gatsby": "^5.11.0",
+    "gatsby-image": "^3.11.0",
+    "gatsby-plugin-graphql": "^2.0.5",
+    "gatsby-plugin-image": "^3.12.0",
+    "gatsby-plugin-react-helmet": "^6.12.0",
+    "gatsby-plugin-sass": "^6.12.0",
+    "gatsby-plugin-sharp": "^5.12.0",
+    "gatsby-source-filesystem": "^5.12.0",
+    "gatsby-transformer-remark": "^6.12.0",
+    "gatsby-transformer-sharp": "^5.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-material-ui-carousel": "^3.4.2"
   },
   "repository": {
@@ -27,5 +37,8 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "devDependencies": {
+    "@types/react-helmet": "^6.1.6"
   }
 }

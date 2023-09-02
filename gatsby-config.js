@@ -8,5 +8,44 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  plugins: [],
+  plugins: [
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp', // Needed for dynamic images
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `galeria-de-fotos`,
+        path: `${__dirname}/src/galeria-de-fotos/`,
+      },
+    },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `event-cover`,
+        path: `${__dirname}/src/markdown/event-cover/`,
+      },
+    },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/src/markdown/`,
+      },
+    },
+
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {},
+    },
+
+  ],
+  siteMetadata: {
+    title: 'IBPG',
+    description: 'Uma igreja que ama e que prega a verdade.',
+  },
 }

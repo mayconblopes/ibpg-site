@@ -6,42 +6,11 @@ import MyCarousel from '../components/MyCarousel'
 import QuadroAvisos from '../components/QuadroAvisos'
 import IBPGNews from '../components/IBPGNews'
 import CultosOnline from '../components/CultosOnline'
+import { graphql } from 'gatsby'
 
-export default function Home() {
-  const eventos = [
-    {
-      title: 'Ele vira!',
-      date: '21/05/2022',
-      cover:
-        'https://images.pexels.com/photos/15489187/pexels-photo-15489187/free-photo-of-lone-tree-on-the-hill-in-fog.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
-    },
-    {
-      title: 'Ele já veio!',
-      date: '21/05/2023',
-      cover:
-        'https://images.pexels.com/photos/10283517/pexels-photo-10283517.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
-    },
-    {
-      title: 'Ele retorna!',
-      date: '21/05/2022',
-      cover:
-        'https://images.pexels.com/photos/15478810/pexels-photo-15478810/free-photo-of-sea-black-and-white-landscape-man.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
-    },
-
-    {
-      title: 'Ele retorna!',
-      date: '21/05/2022',
-      cover:
-        'https://images.pexels.com/photos/15478810/pexels-photo-15478810/free-photo-of-sea-black-and-white-landscape-man.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
-    },
-
-    {
-      title: 'Ele retorna!',
-      date: '21/05/2022',
-      cover:
-        'https://images.pexels.com/photos/15478810/pexels-photo-15478810/free-photo-of-sea-black-and-white-landscape-man.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
-    },
-  ]
+export default function Home({ data }: any) {
+  const eventos = data.allMarkdownRemark.nodes
+  const eventCovers = data.allFile.nodes
 
   return (
     <Layout>
@@ -56,8 +25,17 @@ export default function Home() {
       >
         <div style={{ width: '85%' }}>
           <MyCarousel
-            items={eventos.map((evento, i) => (
-              <Evento key={i} {...evento} />
+            items={eventos.map((evento: any, i: any) => (
+              <Evento
+                key={i}
+                {...evento.frontmatter}
+                eventCover={
+                  eventCovers.filter(
+                    (cover: { relativePath: any }) =>
+                      cover.relativePath.includes(evento.frontmatter.eventCover)
+                  )[0].childrenImageSharp[0].fluid
+                }
+              />
             ))}
           />
         </div>
@@ -76,15 +54,35 @@ export default function Home() {
         </div>
 
         <div style={{ marginTop: '20px', width: '85%' }}>
-          <CultosOnline
-            cultosURLs={[
-              'https://www.youtube.com/embed/EtWsrp4dnhE?si=uTkTJHVGyi-Uopu1',
-              'https://www.youtube.com/embed/EtWsrp4dnhE?si=uTkTJHVGyi-Uopu1',
-              'https://www.youtube.com/embed/EtWsrp4dnhE?si=uTkTJHVGyi-Uopu1',
-            ]}
-          />
+          <CultosOnline />
         </div>
       </div>
     </Layout>
   )
 }
+
+export const query = graphql`
+  query EventoQuery {
+    allFile(filter: { dir: { regex: "/event-cover/" } }) {
+      nodes {
+        relativePath
+        childrenImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+    allMarkdownRemark(filter: { frontmatter: { type: { eq: "evento" } } }) {
+      nodes {
+        frontmatter {
+          eventCover
+          eventDate
+          eventSlug
+          eventTitle
+        }
+        html
+      }
+    }
+  }
+`
