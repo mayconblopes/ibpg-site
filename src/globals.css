@@ -12,3 +12,8 @@ html, body {
     min-height: 100%;
     min-height: -webkit-fill-available;
 }
+
+.beautifulText p, .beautifulText strong, .beautifulText em, .beautifulText a {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
