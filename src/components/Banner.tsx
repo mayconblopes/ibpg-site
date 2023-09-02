@@ -1,5 +1,18 @@
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
+
 export default function Banner() {
+  const data = useStaticQuery(graphql`
+    query SiteInf {
+      site {
+        siteMetadata {
+          description
+        }
+      }
+    }
+  `)
+  const { description } = data.site.siteMetadata
+
   return (
     <div
       style={{
@@ -12,11 +25,18 @@ export default function Banner() {
         textAlign: 'center',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
       }}
     >
-      <p style={{ color: 'white', fontSize: '13px', fontWeight: 'bold', fontStyle: 'italic' }}>
-        “Uma igreja que ama e que prega a verdade.”
+      <p
+        style={{
+          color: 'white',
+          fontSize: '13px',
+          fontWeight: 'bold',
+          fontStyle: 'italic',
+        }}
+      >
+        "{description}"
       </p>
     </div>
   )
