@@ -25,10 +25,10 @@ export default function Navbar() {
           style={{ display: menuOpen ? 'flex' : 'none' }}
         >
           <Link to='/'>Home</Link>
-          <Link to='/'>Galeria de fotos</Link>
-          <Link to='/'>Documentos</Link>
-          <Link to='/'>Aniversariantes</Link>
-          <Link to='/'>Sobre</Link>
+          <Link to='/sobre'>Sobre</Link>
+          <Link to='/fotos'>Galeria de fotos</Link>
+          <Link to='/aniversariantes'>Aniversariantes</Link>
+          <Link to='/documentos'>Documentos</Link>
           <img className={styles.logo} src={logo} alt='logo da IBPG' />
         </div>
       </div>
@@ -38,7 +38,9 @@ export default function Navbar() {
           <CharmMenuHamburger className={styles.menuIcon} />
         </IconButton>
         <h1 className={styles.title}>Igreja Batista em Parque Guarus</h1>
-        <img className={styles.logo} src={logo} alt='logo da IBPG' />
+        <Link to='/'>
+          <img className={styles.logo} src={logo} alt='logo da IBPG' />
+        </Link>
       </nav>
     </Fragment>
   )
