@@ -18,8 +18,8 @@ export default function Sobre({ data }: any) {
           gap: '20px',
         }}
       >
-        <h1 style={{ fontWeight: 'bold', alignSelf: 'center', fontSize: '14px' }}>
-          Sobre a IBPG
+        <h1 style={{ fontWeight: 'bold', alignSelf: 'center', fontSize: '14px', marginTop: '20px' }}>
+          SOBRE A IBPG
         </h1>
         <div className='beautifulText' dangerouslySetInnerHTML={{ __html: sobre[0].html }}></div>
       </div>
