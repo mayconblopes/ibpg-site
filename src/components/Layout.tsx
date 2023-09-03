@@ -39,7 +39,7 @@ export default function Layout({ children }: LayoutProps) {
 
         <div
           style={{
-            height: `calc(${window.innerHeight}px - 175px)`,
+            height: `calc(${window.innerHeight}px - 170px)`,
             overflow: 'scroll',
           }}
         >

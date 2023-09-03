@@ -1,9 +1,9 @@
 ---
 type: evento
-eventTitle: consulta
+eventTitle: Luz do Mundo
 eventDate: 30/09/2023
-eventCover: consulta.jpg
-eventSlug: consulta
+eventCover: luzdomundo.jpg
+eventSlug: luz-do-mundo
 ---
 
 # What is Lorem Ipsum?

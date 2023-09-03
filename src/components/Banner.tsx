@@ -14,30 +14,33 @@ export default function Banner() {
   const { description } = data.site.siteMetadata
 
   return (
-    <div
-      style={{
-        backgroundColor: '#0299D4',
-        width: '55%',
-        height: '40px',
-        marginBottom: '25px',
-        marginLeft: 'auto',
-        padding: '10px',
-        textAlign: 'center',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-around',
-      }}
-    >
-      <p
+    <div style={{ backgroundImage: "url('./back-banner.jpg')", backgroundPosition: 'bottom', height: '110px', display: 'flex', alignItems: 'center' }}>
+      <div
         style={{
-          color: 'white',
-          fontSize: '13px',
-          fontWeight: 'bold',
-          fontStyle: 'italic',
+          backgroundColor: '#0299D4',
+          opacity: '0.92',
+          width: '55%',
+          height: '40px',
+          // marginBottom: '25px',
+          marginLeft: 'auto',
+          padding: '10px',
+          textAlign: 'center',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-around',
         }}
       >
-        "{description}"
-      </p>
+        <p
+          style={{
+            color: 'white',
+            fontSize: '15px',
+            fontWeight: 'bold',
+            fontStyle: 'italic',
+          }}
+        >
+          "{description}"
+        </p>
+      </div>
     </div>
   )
 }

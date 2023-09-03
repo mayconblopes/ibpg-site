@@ -54,19 +54,17 @@ export default function CultosOnline() {
           flexWrap: 'wrap',
           justifyContent: 'space-between',
           alignItems: 'center',
-          backgroundColor: '#FFF1D0',
+          backgroundColor: '#0299D4',
           padding: '20px 0px',
           borderRadius: '10px',
           boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
-          marginBottom: '25px',
+          // marginBottom: '25px',
         }}
       >
         {ultimos4cultos.map((video, index) => (
-          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '15px', boxSizing: 'border-box'}}>
             <iframe
               key={index}
-              // height='90px'
-              width='85%'
               src={`https://www.youtube.com/embed/${video.link.split('v=')[1]}`}
               title={video.title}
               frameBorder='0'
@@ -74,15 +72,17 @@ export default function CultosOnline() {
               allowFullScreen
               style={{
                 margin: '5px',
+                borderRadius: '10px',
+                maxWidth: '100%',
               }}
             ></iframe>
             <p
               style={{
                 fontWeight: 'bold',
-                fontSize: '8px',
-                color: '#272635',
-                width: '70%',
-                marginBottom: '15px',
+                fontSize: '12px',
+                color: '#fff',
+                width: '90%',
+                // marginBottom: '15px',
                 marginLeft: '5px',
               }}
             >
@@ -97,7 +97,9 @@ export default function CultosOnline() {
           style={{
             textDecoration: 'underline',
             fontWeight: 'bold',
-            color: 'rgb(2, 153, 212)',
+            color: '#fff',
+            fontSize: '10px',
+            marginTop: '15px',
           }}
         >
           Veja todos os cultos online aqui

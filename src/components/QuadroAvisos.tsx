@@ -1,34 +1,23 @@
 import { maxHeight } from '@mui/system'
 import React from 'react'
+import * as styles from './quadroavisos.module.css'
 
 type QuadroAvisosProps = {
-  avisos: Array<string>
+  avisos: any
 }
 
 export default function QuadroAvisos({ avisos }: QuadroAvisosProps) {
+  console.log('AVISOS--------->', avisos);
+  
   return (
     <div>
       <p style={{ fontWeight: 'bold', textAlign: 'center', fontSize: '14px' }}>
         Avisos
       </p>
-      <div
-        style={{
-          borderRadius: '10px',
-          background: '#0299D4',
-          boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
-          padding: '15px 15px',
-        }}
-      >
-        <div
-          style={{
-            maxHeight: '120px',
-            overflow: 'scroll',
-          }}
-        >
+      <div className={styles.container}>
+        <div className={styles.quadro}>
 
-          {avisos.map((aviso, index) => (
-            <p
-              key={index}
+          <div className={styles.avisos} dangerouslySetInnerHTML={{ __html: avisos.html}}
               style={{
                 color: 'white',
                 fontSize: '14px',
@@ -37,10 +26,7 @@ export default function QuadroAvisos({ avisos }: QuadroAvisosProps) {
                 lineHeight: '112.4%',
                 padding: '10px',
               }}
-              >
-              {index+1 +  '. ' + aviso}
-            </p>
-          ))}
+          />
           </div>
       </div>
     </div>

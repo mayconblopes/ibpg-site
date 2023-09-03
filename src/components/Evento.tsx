@@ -24,8 +24,8 @@ export default function Evento({
       </p>
       <Link to={`/eventos/${eventSlug}`}>
       <div className={styles.container}>
-        <div style={{ width: '100px' }}>
-          <Img fluid={eventCover} imgStyle={{width:'auto', height: '110px' }}/>
+        <div style={{ width: '150px' }}>
+          <Img fluid={eventCover} imgStyle={{width:'auto', height: '150px' }}/>
         </div>
         <div className={styles.descriptionContainer}>
           <h2 className={styles.title}>{eventTitle}</h2>

@@ -9,7 +9,14 @@ import CultosOnline from '../components/CultosOnline'
 import { graphql } from 'gatsby'
 
 export default function Home({ data }: any) {
-  const eventos = data.allMarkdownRemark.nodes
+  console.log('DATA--------->', data)
+
+  const eventos = data.allMarkdownRemark.nodes.filter(
+    (node: any) => node.frontmatter.type === 'evento'
+  )
+  const avisos = data.allMarkdownRemark.nodes.filter(
+    (node: any) => node.frontmatter.type === 'avisos'
+  )[0]
   const eventCovers = data.allFile.nodes
 
   return (
@@ -23,16 +30,15 @@ export default function Home({ data }: any) {
           alignItems: 'center',
         }}
       >
-        <div style={{ width: '85%' }}>
+        <div style={{ width: '85%', marginTop: '20px' }}>
           <MyCarousel
             items={eventos.map((evento: any, i: any) => (
               <Evento
                 key={i}
                 {...evento.frontmatter}
                 eventCover={
-                  eventCovers.filter(
-                    (cover: { relativePath: any }) =>
-                      cover.relativePath.includes(evento.frontmatter.eventCover)
+                  eventCovers.filter((cover: { relativePath: any }) =>
+                    cover.relativePath.includes(evento.frontmatter.eventCover)
                   )[0].childrenImageSharp[0].fluid
                 }
               />
@@ -40,16 +46,20 @@ export default function Home({ data }: any) {
           />
         </div>
         <div style={{ marginTop: '20px', width: '85%' }}>
-          <QuadroAvisos
-            avisos={[
-              'Curso de panificação com o Diácono Paulo Roberto: inscrição R$ 20,00 (na secretaria). Vagas limitadas!',
-              'Curso de panificação com o Diácono Paulo Roberto: inscrição R$ 20,00 (na secretaria). Vagas limitadas!',
-              'Curso de panificação com o Diácono Paulo Roberto: inscrição R$ 20,00 (na secretaria). Vagas limitadas!',
-            ]}
-          />
+          <QuadroAvisos avisos={avisos} />
         </div>
 
-        <div style={{ marginTop: '20px', width: '85%' }}>
+        <div
+          // style={{
+          //   marginTop: '20px',
+          //   width: '85%',
+          //   backgroundColor: '#0299D4',
+          //   height: '180px',
+          //   borderRadius: '10px',
+          //   padding: '15px',
+          //   boxSizing: 'border-box',
+          // }}
+        >
           <IBPGNews videoURL='https://www.youtube.com/embed/EtWsrp4dnhE?si=uTkTJHVGyi-Uopu1' />
         </div>
 
@@ -73,13 +83,16 @@ export const query = graphql`
         }
       }
     }
-    allMarkdownRemark(filter: { frontmatter: { type: { eq: "evento" } } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { type: { in: ["evento", "avisos"] } } }
+    ) {
       nodes {
         frontmatter {
           eventCover
           eventDate
           eventSlug
           eventTitle
+          type
         }
         html
       }
