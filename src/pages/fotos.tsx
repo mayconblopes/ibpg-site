@@ -67,7 +67,7 @@ export default function Fotos({ data }: any) {
         <div style={modalStyle}>
           <div
             style={{
-              backgroundColor: '#0299D4',
+              backgroundColor: '#F0C808',
               border: '1px solid black',
               borderBottom: 'none',
             }}
@@ -100,7 +100,7 @@ export default function Fotos({ data }: any) {
               display: 'flex',
               justifyContent: 'space-around',
               alignItems: 'center',
-              backgroundColor: '#0299D4',
+              backgroundColor: '#F0C808',
               padding: '10px',
               border: '1px solid black',
               borderTop: 'none',
@@ -141,12 +141,14 @@ export default function Fotos({ data }: any) {
           gap: '10px',
           background: '#0299D4',
           width: '85%',
-          height: '100%',
+          height: 'calc(100% - 70px)',
           margin: 'auto',
+          marginBottom: '20px',
           borderRadius: '10px',
           padding: '15px',
           overflow: 'scroll',
           boxSizing: 'border-box',
+          boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
         }}
       >
         {fotos.map((foto, index) => (

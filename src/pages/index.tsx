@@ -24,7 +24,7 @@ export default function Home({ data }: any) {
     <Layout>
       <Banner />
       <div className={styles.indexContainer}>
-        <div style={{ width: 'calc(min(85%, 330px))', marginTop: '20px' }}>
+        <div className={styles.section}>
           <MyCarousel
             items={eventos.map((evento: any, i: any) => (
               <Evento

@@ -47,10 +47,13 @@ export default function IBPGNews() {
       <div
         style={{
           backgroundColor: '#0299D4',
-          height: '180px',
+          height: '250px',
           borderRadius: '10px',
           padding: '15px',
           boxSizing: 'border-box',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
         }}
       >
         <iframe

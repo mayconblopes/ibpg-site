@@ -62,7 +62,16 @@ export default function CultosOnline() {
         }}
       >
         {ultimos4cultos.map((video, index) => (
-          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '15px', boxSizing: 'border-box'}}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              padding: '15px',
+              boxSizing: 'border-box',
+            }}
+          >
             <iframe
               key={index}
               src={`https://www.youtube.com/embed/${video.link.split('v=')[1]}`}
@@ -74,6 +83,7 @@ export default function CultosOnline() {
                 margin: '5px',
                 borderRadius: '10px',
                 maxWidth: '100%',
+                boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
               }}
             ></iframe>
             <p
