@@ -7,6 +7,7 @@ import QuadroAvisos from '../components/QuadroAvisos'
 import IBPGNews from '../components/IBPGNews'
 import CultosOnline from '../components/CultosOnline'
 import { graphql } from 'gatsby'
+import * as styles from './index.module.css'
 
 export default function Home({ data }: any) {
   console.log('DATA--------->', data)
@@ -22,15 +23,8 @@ export default function Home({ data }: any) {
   return (
     <Layout>
       <Banner />
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <div style={{ width: '85%', marginTop: '20px' }}>
+      <div className={styles.indexContainer}>
+        <div style={{ width: 'calc(min(85%, 330px))', marginTop: '20px' }}>
           <MyCarousel
             items={eventos.map((evento: any, i: any) => (
               <Evento
@@ -45,25 +39,15 @@ export default function Home({ data }: any) {
             ))}
           />
         </div>
-        <div style={{ marginTop: '20px', width: '85%' }}>
+        <div className={styles.section}>
           <QuadroAvisos avisos={avisos} />
         </div>
 
-        <div
-          // style={{
-          //   marginTop: '20px',
-          //   width: '85%',
-          //   backgroundColor: '#0299D4',
-          //   height: '180px',
-          //   borderRadius: '10px',
-          //   padding: '15px',
-          //   boxSizing: 'border-box',
-          // }}
-        >
-          <IBPGNews videoURL='https://www.youtube.com/embed/EtWsrp4dnhE?si=uTkTJHVGyi-Uopu1' />
+        <div className={styles.section}>
+          <IBPGNews />
         </div>
 
-        <div style={{ marginTop: '20px', width: '85%' }}>
+        <div className={styles.section}>
           <CultosOnline />
         </div>
       </div>

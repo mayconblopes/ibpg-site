@@ -58,7 +58,7 @@ export default function CultosOnline() {
           padding: '20px 0px',
           borderRadius: '10px',
           boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
-          // marginBottom: '25px',
+          marginBottom: '20px',
         }}
       >
         {ultimos4cultos.map((video, index) => (

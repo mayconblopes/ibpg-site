@@ -8,6 +8,8 @@ type LayoutProps = {
   children: React.ReactNode
 }
 
+const isBrowser = typeof window !== 'undefined'
+
 export default function Layout({ children }: LayoutProps) {
   const data = useStaticQuery(graphql`
     query SiteInfo {
@@ -20,6 +22,10 @@ export default function Layout({ children }: LayoutProps) {
     }
   `)
 
+  const fixMobileViewPortHeight = isBrowser
+    ? `calc(${window.innerHeight - 150}px)`
+    : `calc(100vh - 150px)`
+
   return (
     <Fragment>
       <Helmet>
@@ -27,7 +33,7 @@ export default function Layout({ children }: LayoutProps) {
         <title>{data.site.siteMetadata.title}</title>
         <meta name='description' content={data.site.siteMetadata.description} />
       </Helmet>
-      
+
       <div
         style={{
           display: 'flex',
@@ -36,14 +42,27 @@ export default function Layout({ children }: LayoutProps) {
         }}
       >
         <Navbar />
-
-        <div
-          style={{
-            height: `calc(${window.innerHeight}px - 170px)`,
-            overflow: 'scroll',
-          }}
-        >
-          {children}
+        <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: '#f4f4f4'}}>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              width: 'calc(min(100%,600px))',
+              boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)' ,
+              // paddingBottom: '20px',
+              backgroundColor: 'white'
+            }}
+          >
+            <div
+              style={{
+                height: `${fixMobileViewPortHeight}`,
+                overflow: 'scroll',
+                width: '100%',
+              }}
+            >
+              {children}
+            </div>
+          </div>
         </div>
 
         <footer
@@ -55,7 +74,7 @@ export default function Layout({ children }: LayoutProps) {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            marginTop: '20px',
+            // marginTop: '20px',
           }}
         >
           <p
