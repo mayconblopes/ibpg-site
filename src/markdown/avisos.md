@@ -6,6 +6,4 @@ type: avisos
 
 2\. Curso de panificação com o Diácono Paulo Roberto: inscrição R$ 20,00 (na secretaria). Vagas limitadas!
 
-3\. Curso de panificação com o Diácono Paulo Roberto: inscrição R$ 20,00 (na secretaria)!
-
-4\. Olá, mundo! Olá, irmãos!
+3\. Olá, mundo! Olá, irmãos!
