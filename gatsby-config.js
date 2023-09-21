@@ -49,4 +49,7 @@ module.exports = {
     title: 'IBPG',
     description: 'Uma igreja que ama e que prega a verdade.',
   },
+  
+  // this is for gh-pages deployment
+  pathPrefix: "/ibpg-site"
 }

@@ -1,9 +1,9 @@
 import { graphql } from 'gatsby'
 import React, { Fragment } from 'react'
 import Layout from '../components/Layout'
+import * as styles from './aniversariantes.module.css'
 
 export default function Aniversariantes({ data }: any) {
-  console.log('aniversariantes', data)
 
   return (
     <Layout>
@@ -30,7 +30,7 @@ export default function Aniversariantes({ data }: any) {
               Desejamos a todos os nossos irmãos e irmãs que fazem aniversário
               neste mês, uma vida de bençãos e muitas felicidades!
             </em>
-            <div
+            <div className={styles.aniversariantes}
               style={{ marginTop: '15px' }}
               dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
             />

@@ -16,10 +16,13 @@ export default function IBPGNews() {
     )
   
     useEffect(() => {
+      let orderedResult: any[] = []
+
       fetch(reqURL)
         .then(response => response.json())
         .then(result => {
-          // console.log('RESULT IBPGNEWS--->', result)
+          console.log('RESULT IBPGNEWS--->', result)
+          result.items.sort((a: any, b: any) => b.pubDate > a.pubDate)
           setIbpgNews(result.items[0])
         })
         .catch(error => {
@@ -58,7 +61,7 @@ export default function IBPGNews() {
       >
         <iframe
           height='100%'
-          src={`https://www.youtube.com/embed/${ibpgNews.link.split('v=')[1]}`}
+          src={`https://www.youtube.com/embed/${ibpgNews.link.split('v=')[1]}?rel=0`}
           title='YouTube video player'
           frameBorder='0'
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'

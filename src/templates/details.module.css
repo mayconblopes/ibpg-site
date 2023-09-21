@@ -23,3 +23,7 @@
     width: 90%;
     margin-top: 15px;
 }
+
+.details * {
+    margin-bottom: 10px;
+}

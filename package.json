@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "Igreja Batista em Parque Guarus",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Uma igreja que ama e que prega a verdade",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
@@ -10,7 +10,8 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "@mui/icons-material": "^5.14.3",

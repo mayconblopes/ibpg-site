@@ -21,11 +21,29 @@ export default function CultosOnline() {
   ])
 
   useEffect(() => {
+    let names: string[] = []
+    let last4cultos: any[] = []
+
     fetch(reqURL)
       .then(response => response.json())
       .then(result => {
-        console.log(result)
-        setUltimos4cultos(result.items.slice(0, 4))
+        names = result.items.map((item: any) => item.title)
+        // remove duplicates
+        names = names.filter(
+          (name: string, index: number) => names.indexOf(name) === index
+        )
+
+        // select last 4 cultos
+        names
+          .filter((name: string) => name.match(/culto/gi))
+          .slice(0, 4)
+          .forEach(name => {
+            last4cultos.push(
+              result.items.filter((item: any) => item.title === name)[0]
+            )
+          })
+
+        setUltimos4cultos(last4cultos)
       })
       .catch(error => {
         console.log(error)
@@ -71,10 +89,10 @@ export default function CultosOnline() {
               padding: '15px',
               boxSizing: 'border-box',
             }}
+            key={index}
           >
             <iframe
-              key={index}
-              src={`https://www.youtube.com/embed/${video.link.split('v=')[1]}`}
+              src={`https://www.youtube.com/embed/${video.link.split('v=')[1]}?rel=0`}
               title={video.title}
               frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
