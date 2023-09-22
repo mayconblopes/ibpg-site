@@ -17,3 +17,17 @@ html, body {
     margin-bottom: 15px;
     font-size: 16px;
 }
+
+.beautifulText h1 {
+    font-size: 24px;
+}
+
+.beautifulText h2 {
+    font-size: 18px;
+}
+
+.beautifulText li, .beautifulText ul {
+    margin: 10px;
+    padding: 0;
+    font-size: 14px;
+}

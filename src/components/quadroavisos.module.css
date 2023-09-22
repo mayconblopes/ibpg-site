@@ -1,5 +1,5 @@
 .container {
-  border-radius: 10px;
+  /* border-radius: 10px; */
   background: #F0C808;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 15px 15px;
@@ -12,6 +12,6 @@
 }
 
 .quadro {
-    max-height: 180px;
+    max-height: 160px;
     overflow: scroll;
 }

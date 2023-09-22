@@ -42,15 +42,21 @@ export default function Layout({ children }: LayoutProps) {
         }}
       >
         <Navbar />
-        <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: '#f4f4f4'}}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            backgroundColor: '#f4f4f4',
+          }}
+        >
           <div
             style={{
               display: 'flex',
               justifyContent: 'center',
               width: 'calc(min(100%,600px))',
-              boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)' ,
+              boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
               // paddingBottom: '20px',
-              backgroundColor: 'white'
+              backgroundColor: 'white',
             }}
           >
             <div
@@ -83,11 +89,19 @@ export default function Layout({ children }: LayoutProps) {
               color: 'white',
               fontSize: '12px',
               fontWeight: 'bold',
+              textAlign: 'center',
             }}
           >
             Igreja Batista em Parque Guarus
           </p>
-          <p style={{ width: '67%', color: 'white', fontSize: '12px' }}>
+          <p
+            style={{
+              width: '67%',
+              color: 'white',
+              fontSize: '12px',
+              textAlign: 'center',
+            }}
+          >
             Av. Cristovan Lysandro Albernaz, 245 - Pq Guarus, Campos/RJ
           </p>
         </footer>

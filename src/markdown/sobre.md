@@ -17,7 +17,7 @@ Nossos cultos são o ponto alto da nossa semana, uma celebração da fé e da co
 
 Venha nos visitar! Estamos localizados na Avenida Cristovan Lysandro Albernaz, nº 245, Parque Guarus, Campos dos Goytacazes/RJ. Queremos conhecê-lo e compartilhar essa jornada espiritual edificante ao seu lado.
 
-Entre em contato conosco pelo telefone (22) 2731-7223 ou envie um email para     igrejabatistaemparqueguarus@yahoo.com.br para obter mais informações. Mal podemos esperar para lhe receber de braços abertos!
+Entre em contato conosco pelo telefone (22) 2731-7223 para obter mais informações. Mal podemos esperar para lhe receber de braços abertos!
 
 Com amor e bênçãos,
 

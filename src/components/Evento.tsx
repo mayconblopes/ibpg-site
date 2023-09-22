@@ -19,7 +19,7 @@ export default function Evento({
 
   return (
     <Fragment>
-      <p style={{ fontWeight: 'bold', alignSelf: 'start', fontSize: '14px' }}>
+      <p style={{ fontWeight: 'bold', alignSelf: 'start', fontSize: '16px' }}>
         Eventos
       </p>
       <Link to={`/eventos/${eventSlug}`}>

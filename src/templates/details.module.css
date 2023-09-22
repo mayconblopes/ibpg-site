@@ -1,29 +1,41 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .title {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .cover {
-    width: 95%;
+  width: 95%;
 }
 
-.cover img{
-    border-radius: 20px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
+.cover img {
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .details {
-    width: 90%;
-    margin-top: 15px;
+  width: 90%;
+  margin-top: 15px;
 }
 
 .details * {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.details li,
+.details ul {
+  margin: 10px;
+}
+
+.details h1 {
+  font-size: 24px;
+}
+
+.details h2 {
+  font-size: 18px;
 }

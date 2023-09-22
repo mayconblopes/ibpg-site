@@ -6,8 +6,9 @@ import MyCarousel from '../components/MyCarousel'
 import QuadroAvisos from '../components/QuadroAvisos'
 import IBPGNews from '../components/IBPGNews'
 import CultosOnline from '../components/CultosOnline'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import * as styles from './index.module.css'
+import Destaque from '../components/Destaque'
 
 export default function Home({ data }: any) {
   console.log('DATA--------->', data)
@@ -41,6 +42,23 @@ export default function Home({ data }: any) {
         </div>
         <div className={styles.section}>
           <QuadroAvisos avisos={avisos} />
+        </div>
+
+        <div
+          className={styles.section}
+          style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
+        >
+          <Destaque
+            title='Escola de Músicas Louvart'
+            banner='banner_louvart.webp'
+            linkTo='/louvart'
+          />
+
+          <Destaque
+            title='Curso de Panificação'
+            banner='banner_panificacao.webp'
+            linkTo='/panificacao'
+          />
         </div>
 
         <div className={styles.section}>

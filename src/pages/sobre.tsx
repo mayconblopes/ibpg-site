@@ -8,20 +8,22 @@ export default function Sobre({ data }: any) {
 
   return (
     <Layout>
-      <div
+      <h1
         style={{
-          padding: '0 15%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '20px',
+          fontWeight: 'bold',
+          textAlign: 'center',
+          fontSize: '20px',
+          marginTop: '20px',
+          marginBottom: '10px',
         }}
       >
-        <h1 style={{ fontWeight: 'bold', alignSelf: 'center', fontSize: '14px', marginTop: '20px' }}>
-          SOBRE A IBPG
-        </h1>
-        <div className='beautifulText' dangerouslySetInnerHTML={{ __html: sobre[0].html }}></div>
+        SOBRE A IBPG
+      </h1>
+      <div style={{ marginLeft: '20px', marginRight: '20px' }}>
+        <div
+          className='beautifulText'
+          dangerouslySetInnerHTML={{ __html: sobre[0].html }}
+        />
       </div>
     </Layout>
   )

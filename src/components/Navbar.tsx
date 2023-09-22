@@ -25,10 +25,12 @@ export default function Navbar() {
           style={{ display: menuOpen ? 'flex' : 'none' }}
         >
           <Link to='/'>Home</Link>
-          <Link to='/sobre'>Sobre</Link>
           <Link to='/fotos'>Galeria de fotos</Link>
+          {/* <Link to='/louvart'>Escola Louvart</Link> */}
+          {/* <Link to='/panificacao'>Curso Panificação</Link> */}
           <Link to='/aniversariantes'>Aniversariantes</Link>
           <Link to='/documentos'>Documentos</Link>
+          <Link to='/sobre'>Sobre</Link>
           <img className={styles.logo} src={logo} alt='logo da IBPG' />
         </div>
       </div>
