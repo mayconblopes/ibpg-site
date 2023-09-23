@@ -10,7 +10,7 @@ export default function Panificacao({ data }: any) {
     <Layout>
       <Helmet>
        <title>Curso de Panificação</title>
-        <meta name='description' content={conteudo.replace(/<[^>]*>/g, '').slice(0, 300)} />
+        <meta name='description' content={conteudo[0].html.replace(/<[^>]*>/g, '').slice(0, 300)} />
       </Helmet>
       <img
         src='/banner_panificacao.webp'

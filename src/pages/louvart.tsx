@@ -10,7 +10,7 @@ export default function Louvart({ data }: any) {
     <Layout>
       <Helmet>
        <title>Escola de Música Louvart</title>
-        <meta name='description' content={conteudo.replace(/<[^>]*>/g, '').slice(0, 300)} />
+        <meta name='description' content={conteudo[0].html.replace(/<[^>]*>/g, '').slice(0, 300)} />
       </Helmet>
       <img
         src='/banner_louvart.webp'
