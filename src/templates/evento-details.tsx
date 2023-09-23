@@ -14,6 +14,9 @@ export default function EventoDetails({ data }: any) {
   
   const isBrowser = typeof window !== 'undefined'
   const origin = isBrowser ? window.location.origin : ''
+
+  console.log(`${origin}${coverFluid.src}`);
+  
   
 
   return (
@@ -24,7 +27,7 @@ export default function EventoDetails({ data }: any) {
         
         {/* TODO change this fixed url to dynamic */}
         {/* <meta property='og:image' content={`http://igrejabatistapg.org/${coverFluid.src}`} /> */}
-        <meta property='og:image' content={`${origin}/${coverFluid.src}`} />
+        <meta property='og:image' content={`${origin.replace(/https/, 'http')}${coverFluid.src}`} />
       </Helmet>
       <div className={styles.container}>
         <h1 className={styles.title}>{data.markdownRemark.frontmatter.eventTitle}</h1>

@@ -7,6 +7,8 @@ export default function Panificacao({ data }: any) {
 
   const isBrowser = typeof window !== 'undefined'
   const origin = isBrowser ? window.location.origin : ''
+  
+  console.log(`${origin.replace(/https/, 'http')}/banner_panificacao.webp`);
 
     
   const conteudo = data.allMarkdownRemark.nodes
@@ -16,7 +18,7 @@ export default function Panificacao({ data }: any) {
        <title>Curso de Panificação</title>
         <meta name='description' content={conteudo[0].html.replace(/<[^>]*>/g, '').slice(0, 300)} />
 
-        <meta property='og:image' content={`${origin}/banner_panificacao.webp`} />
+        <meta property='og:image' content={`${origin.replace(/https/, 'http')}/banner_panificacao.webp`} />
       </Helmet>
       <img
         src='/banner_panificacao.webp'

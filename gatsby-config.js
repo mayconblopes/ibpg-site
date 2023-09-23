@@ -48,6 +48,7 @@ module.exports = {
   siteMetadata: {
     title: 'IBPG',
     description: 'Uma igreja que ama e que prega a verdade.',
+    origin: 'http://igrejabatistapg.org'
   },
   
   // this is for gh-pages deployment
