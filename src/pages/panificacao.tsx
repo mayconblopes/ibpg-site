@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet'
 export default function Panificacao({ data }: any) {
 
   const isBrowser = typeof window !== 'undefined'
-  const url = isBrowser ? window.location.origin : ''
+  const origin = isBrowser ? window.location.origin : ''
 
     
   const conteudo = data.allMarkdownRemark.nodes
@@ -16,7 +16,7 @@ export default function Panificacao({ data }: any) {
        <title>Curso de Panificação</title>
         <meta name='description' content={conteudo[0].html.replace(/<[^>]*>/g, '').slice(0, 300)} />
 
-        <meta property='og:image' content='/banner_panificacao.webp' />
+        <meta property='og:image' content={`${origin}/banner_panificacao.webp`} />
       </Helmet>
       <img
         src='/banner_panificacao.webp'

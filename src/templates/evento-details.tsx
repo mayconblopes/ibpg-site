@@ -12,6 +12,9 @@ export default function EventoDetails({ data }: any) {
 
   console.log('coverFluid--->', coverFluid);
   
+  const isBrowser = typeof window !== 'undefined'
+  const origin = isBrowser ? window.location.origin : ''
+  
 
   return (
     <Layout>
@@ -21,7 +24,7 @@ export default function EventoDetails({ data }: any) {
         
         {/* TODO change this fixed url to dynamic */}
         {/* <meta property='og:image' content={`http://igrejabatistapg.org/${coverFluid.src}`} /> */}
-        <meta property='og:image' content={`/${coverFluid.src}`} />
+        <meta property='og:image' content={`${origin}/${coverFluid.src}`} />
       </Helmet>
       <div className={styles.container}>
         <h1 className={styles.title}>{data.markdownRemark.frontmatter.eventTitle}</h1>

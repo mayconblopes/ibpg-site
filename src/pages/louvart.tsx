@@ -6,11 +6,16 @@ import { Helmet } from 'react-helmet'
 export default function Louvart({ data }: any) {
     
   const conteudo = data.allMarkdownRemark.nodes
+  
+  const isBrowser = typeof window !== 'undefined'
+  const origin = isBrowser ? window.location.origin : ''
+
   return (
     <Layout>
       <Helmet>
        <title>Escola de Música Louvart</title>
         <meta name='description' content={conteudo[0].html.replace(/<[^>]*>/g, '').slice(0, 300)} />
+        <meta property='og:image' content={`${origin}/banner_louvart.webp`} />
       </Helmet>
       <img
         src='/banner_louvart.webp'
