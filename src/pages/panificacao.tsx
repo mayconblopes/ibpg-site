@@ -17,8 +17,8 @@ export default function Panificacao({ data }: any) {
       <Helmet>
        <title>Curso de Panificação</title>
         <meta name='description' content={conteudo[0].html.replace(/<[^>]*>/g, '').slice(0, 300)} />
-
-        <meta property='og:image' content={`${origin.replace(/https/, 'http')}/banner_panificacao.webp`} />
+        <meta property='og:image' content={`http://igrejabatistapg.org/banner_panificacao.webp`} />
+        {/* <meta property='og:image' content={`${origin.replace(/https/, 'http')}/banner_panificacao.webp`} /> */}
       </Helmet>
       <img
         src='/banner_panificacao.webp'

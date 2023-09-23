@@ -15,7 +15,8 @@ export default function Louvart({ data }: any) {
       <Helmet>
        <title>Escola de Música Louvart</title>
         <meta name='description' content={conteudo[0].html.replace(/<[^>]*>/g, '').slice(0, 300)} />
-        <meta property='og:image' content={`${origin.replace(/https/, 'http')}/banner_louvart.webp`} />
+        {/* <meta property='og:image' content={`${origin.replace(/https/, 'http')}/banner_louvart.webp`} /> */}
+        <meta property='og:image' content={`http://igrejabatistapg.org/banner_louvart.webp`} />
       </Helmet>
       <img
         src='/banner_louvart.webp'
