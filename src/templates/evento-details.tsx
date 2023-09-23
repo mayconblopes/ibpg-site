@@ -8,17 +8,17 @@ import { Helmet } from 'react-helmet'
 export default function EventoDetails({ data }: any) {
   const coverName = data.markdownRemark.frontmatter.eventCover
   const coverFluid = data.allImageSharp.nodes.filter(
-    (node: any) => node.fluid.originalName === coverName
-  )[0].fluid
+    (node: any) => node.fluid.originalName === coverName)[0].fluid
 
-  console.log(data);
+  console.log('coverFluid--->', coverFluid);
   
 
   return (
     <Layout>
       <Helmet>
        <title>{data.markdownRemark.frontmatter.eventTitle}</title>
-        <meta name='description' content={data.markdownRemark.html.replace(/<[^>]*>/g, '').slice(0, 150)} />
+        <meta name='description' content={data.markdownRemark.html.replace(/<[^>]*>/g, '').slice(0, 300)} />
+        <meta property='og:image' content={coverFluid.src} />
       </Helmet>
       <div className={styles.container}>
         <h1 className={styles.title}>{data.markdownRemark.frontmatter.eventTitle}</h1>

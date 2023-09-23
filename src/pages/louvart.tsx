@@ -1,12 +1,17 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import { Link, graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
 
 export default function Louvart({ data }: any) {
     
   const conteudo = data.allMarkdownRemark.nodes
   return (
     <Layout>
+      <Helmet>
+       <title>Escola de Música Louvart</title>
+        <meta name='description' content={conteudo.replace(/<[^>]*>/g, '').slice(0, 300)} />
+      </Helmet>
       <img
         src='/banner_louvart.webp'
         alt='banner louvart'
