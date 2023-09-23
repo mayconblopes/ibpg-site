@@ -10,7 +10,7 @@ export default function Funcional({ data }: any) {
   return (
     <Layout>
       <Helmet>
-       <title>Curso de Panificação</title>
+       <title>Funcional Kids</title>
         <meta name='description' content={conteudo[0].html.replace(/<[^>]*>/g, '').slice(0, 300)} />
         <meta property='og:image' content={`http://igrejabatistapg.org/banner_funcional.webp`} />
       </Helmet>
