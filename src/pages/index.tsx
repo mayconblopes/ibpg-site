@@ -59,6 +59,13 @@ export default function Home({ data }: any) {
             banner='banner_panificacao.webp'
             linkTo='/panificacao'
           />
+
+          <Destaque
+            title='Funcional Kids'
+            banner='banner_funcional.webp'
+            linkTo='/funcional'
+          />
+
         </div>
 
         <div className={styles.section}>
