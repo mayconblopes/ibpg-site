@@ -1,9 +1,9 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import Layout from '../components/Layout'
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import { graphql } from 'gatsby'
 import Img, { FluidObject } from 'gatsby-image'
 import { Modal } from '@mui/base'
+import { Button } from '@mui/material'
 
 type IFoto = {
   relativePath: string
@@ -14,11 +14,23 @@ type IFoto = {
 
 export default function Fotos({ data }: any) {
   const fotos: IFoto[] = data.allFile.nodes
-  console.log(fotos)
-  console.log(fotos[0].childrenImageSharp[0].fluid)
+  console.log('fotos--->', fotos)
+  // console.log(fotos[0].childrenImageSharp[0].fluid)
+
+  const directories = data.allDirectory.nodes.sort((a: any, b: any) => a.name.localeCompare(b.name))
+  console.log('directories --->', directories)
 
   const [open, setOpen] = useState(false)
   const [img, setImg] = useState({} as FluidObject)
+  const [filter, setFilter] = useState('outras')
+  const [filteredFotos, setFilteredFotos] = useState(fotos.filter((foto: any) => foto.relativePath.includes(filter)))
+  console.log('firtFilteredFotos', filteredFotos);
+  console.log(fotos.filter((foto: any) => foto.relativePath.includes(filter)));
+  
+  
+  useEffect(() => {
+    setFilteredFotos(fotos.filter((foto: any) => foto.relativePath.includes(filter)))
+  }, [filter])
 
   const modalStyle = {
     position: 'absolute' as 'absolute',
@@ -36,30 +48,38 @@ export default function Fotos({ data }: any) {
   }
 
   function handleNextImage() {
-    const actual = fotos.filter(
+    const actual = filteredFotos.filter(
       (foto: any) => foto.childrenImageSharp[0].fluid.base64 === img.base64
     )[0]
-    const next = fotos[fotos.indexOf(actual) + 1]
-    console.log(fotos.indexOf(actual))
-    console.log(fotos.indexOf(next))
+    const next = filteredFotos[filteredFotos.indexOf(actual) + 1]
+    console.log(filteredFotos.indexOf(actual))
+    console.log(filteredFotos.indexOf(next))
 
-    if (fotos.indexOf(next) >= 0) {
+    if (filteredFotos.indexOf(next) >= 0) {
       setImg(next.childrenImageSharp[0].fluid)
     }
   }
 
   function handlePrevImage() {
-    const actual = fotos.filter(
+    const actual = filteredFotos.filter(
       (foto: any) => foto.childrenImageSharp[0].fluid.base64 === img.base64
     )[0]
-    const prev = fotos[fotos.indexOf(actual) - 1]
-    console.log(fotos.indexOf(actual))
-    console.log(fotos.indexOf(prev))
+    const prev = filteredFotos[filteredFotos.indexOf(actual) - 1]
+    console.log(filteredFotos.indexOf(actual))
+    console.log(filteredFotos.indexOf(prev))
 
-    if (fotos.indexOf(prev) >= 0) {
+    if (filteredFotos.indexOf(prev) >= 0) {
       setImg(prev.childrenImageSharp[0].fluid)
     }
   }
+
+  function handleFilter (event: React.MouseEvent<HTMLButtonElement, MouseEvent>){
+    event.preventDefault()
+    console.log((event.target as HTMLButtonElement).name)
+    setFilter((event.target as HTMLButtonElement).name)
+    console.log('filteredFotos---->', filteredFotos)
+  }
+
 
   return (
     <Layout>
@@ -130,7 +150,41 @@ export default function Fotos({ data }: any) {
           </div>
         </div>
       </Modal>
-      <h1 style={{ textAlign: 'center', marginTop: '20px' }}>GALERIA DE FOTOS</h1>
+      <h1 style={{ textAlign: 'center', marginTop: '20px' }}>
+        GALERIA DE FOTOS
+      </h1>
+
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          width: '80%',
+          gap: '10px',
+          margin: 'auto',
+          marginTop: '10px',
+          marginBottom: '10px',
+        }}
+      >
+        {directories.map((directory: any, index: number) => (
+          <Button
+            name={directory.name}
+            key={index}
+            style={{
+              backgroundColor: filter===directory.name ? 'rgb(191, 161, 18)' : 'rgb(240, 200, 8)',
+              padding: '0 12px',
+              borderRadius: '10px',
+              boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+              color: 'black',
+              fontSize: '12px'
+            }}
+            onClick={(event) => handleFilter(event)}
+          >
+            {directory.name.replace(/-/g, ' ')}
+          </Button>
+        ))}
+      </div>
       <div
         style={{
           display: 'flex',
@@ -141,7 +195,7 @@ export default function Fotos({ data }: any) {
           gap: '10px',
           background: '#0299D4',
           width: '85%',
-          height: 'calc(100% - 70px)',
+          // height: 'calc(100% - 70px)',
           margin: 'auto',
           marginBottom: '20px',
           borderRadius: '10px',
@@ -151,13 +205,16 @@ export default function Fotos({ data }: any) {
           boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
         }}
       >
-        {fotos.map((foto, index) => (
+        {filteredFotos.map((foto, index) => (
           <div
             key={index}
             style={{ width: '45%', cursor: 'pointer' }}
             onClick={() => handleOpenModal(foto.childrenImageSharp[0].fluid)}
           >
-            <Img fluid={foto.childrenImageSharp[0].fluid} imgStyle={{ borderRadius: '20px', maxHeight: '200px' }}/>
+            <Img
+              fluid={foto.childrenImageSharp[0].fluid}
+              imgStyle={{ borderRadius: '20px', maxHeight: '200px' }}
+            />
           </div>
         ))}
       </div>
@@ -175,6 +232,16 @@ export const query = graphql`
             ...GatsbyImageSharpFluid
           }
         }
+      }
+    }
+    allDirectory(
+      filter: {
+        absolutePath: { regex: "/galeria-de-fotos/" }
+        name: { ne: "galeria-de-fotos" }
+      }
+    ) {
+      nodes {
+        name
       }
     }
   }

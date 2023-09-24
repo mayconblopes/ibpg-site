@@ -39,3 +39,9 @@
 .details h2 {
   font-size: 18px;
 }
+
+.details a {
+  color: rgb(2, 153, 212);
+  font-weight: bold;
+  text-decoration: underline;
+}
