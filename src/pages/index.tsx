@@ -49,7 +49,7 @@ export default function Home({ data }: any) {
           style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
         >
           <Destaque
-            title='Escola de Músicas Louvart'
+            title='Escola de Música Louvart'
             banner='banner_louvart.webp'
             linkTo='/louvart'
           />
