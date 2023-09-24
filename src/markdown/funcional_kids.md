@@ -8,6 +8,7 @@ Traga o seu filho e a sua filha para a **Funcional Kids**, toda quarta-feira e s
 **Atividades que exercitam todo o corpo e mente.**
 
 Local: no ginásio da IBPG.
+
 Valor: R$ 95,00/mês.
 
 Venha e faça uma aula experimental e gratuita!
