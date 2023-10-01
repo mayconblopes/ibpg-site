@@ -7,10 +7,14 @@ type CultosOnlineProps = {
 
 export default function CultosOnline() {
   // channel_id = UCbMDaos_DocqABRDVKcW23Q
-  const channelURL = encodeURIComponent(
-    'https://www.youtube.com/feeds/videos.xml?channel_id=UCbMDaos_DocqABRDVKcW23Q'
-  )
-  const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=${channelURL}`
+  // const channelURL = encodeURIComponent(
+  //   'https://www.youtube.com/feeds/videos.xml?channel_id=UCbMDaos_DocqABRDVKcW23Q'
+  // )
+  // const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=${channelURL}`
+  const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=UCbMDaos_DocqABRDVKcW23Q`
+
+  //TODO checar se de fato esta é a URL para videos ao vivo
+  const liveUrl = 'https://www.youtube.com/watch?v=wqxhEKg-LSA'
 
   const [ultimos4cultos, setUltimos4cultos] = useState([
     {
@@ -27,7 +31,10 @@ export default function CultosOnline() {
     fetch(reqURL)
       .then(response => response.json())
       .then(result => {
+        console.log('RESULT-->', result);
+
         names = result.items.map((item: any) => item.title)
+
         // remove duplicates
         names = names.filter(
           (name: string, index: number) => names.indexOf(name) === index
@@ -39,10 +46,11 @@ export default function CultosOnline() {
           .slice(0, 4)
           .forEach(name => {
             last4cultos.push(
-              result.items.filter((item: any) => item.title === name)[0]
+              result.items.filter((item: any) => item.title === name && item.link !== liveUrl)[0]
             )
           })
-
+        console.log('NAMES-->', names);
+        
         setUltimos4cultos(last4cultos)
       })
       .catch(error => {
@@ -51,7 +59,7 @@ export default function CultosOnline() {
   }, [])
 
   useEffect(() => {
-    console.log(ultimos4cultos)
+    console.log('ULTIMOS CULTOS-->',ultimos4cultos)
   }, [ultimos4cultos])
 
   return (

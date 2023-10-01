@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react'
 export default function IBPGNews() {
   // channel_id = UCbMDaos_DocqABRDVKcW23Q
   // playlist id = PLyUOWLaRVGTUoTX5xjOeYLwut0iBaJ_Ix
-  const channelURL = encodeURIComponent(
-    // 'https://www.youtube.com/feeds/videos.xml?playlist_id=PLyUOWLaRVGTUoTX5xjOeYLwut0iBaJ_Ix'
-    'https://www.youtube.com/feeds/videos.xml?channel_id=UCbMDaos_DocqABRDVKcW23Q'
-  )
-  const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=${channelURL}`
+  // const channelURL = encodeURIComponent(
+  //   'https://www.youtube.com/feeds/videos.xml?channel_id=UCbMDaos_DocqABRDVKcW23Q'
+  // )
+  // const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=${channelURL}`
+  const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=UCbMDaos_DocqABRDVKcW23Q`
 
   const [ibpgNews, setIbpgNews] = useState({
     link: '',
