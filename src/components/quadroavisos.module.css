@@ -11,6 +11,11 @@
   font-size: 16px;
 }
 
+.avisos a {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 .quadro {
     max-height: 160px;
     overflow: scroll;

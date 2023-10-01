@@ -38,6 +38,7 @@ export default function QuadroAvisos({ avisos }: QuadroAvisosProps) {
             items={paragraphs.map((p: string, i: number) => (
               <p
                 key={i}
+                className={styles.avisos}
                 style={{textAlign: 'center'}}
               >
                 <div dangerouslySetInnerHTML={{ __html: p }}/>

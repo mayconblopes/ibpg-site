@@ -2,11 +2,24 @@ import { graphql } from 'gatsby'
 import React, { Fragment } from 'react'
 import Layout from '../components/Layout'
 import * as styles from './aniversariantes.module.css'
+import { Helmet } from 'react-helmet'
 
 export default function Aniversariantes({ data }: any) {
-
   return (
     <Layout>
+      <Helmet>
+        <title>Anversariantes do mês</title>
+        <meta name='description' content='Feliz aniversário, irmãos e irmãs!' />
+        <meta
+          property='og:image'
+          content={`http://igrejabatistapg.org/feliz_niver.webp`}
+        />
+      </Helmet>
+      <img
+        src='/banner_feliz_niver.webp'
+        alt='feliz aniversário'
+        style={{ width: '100%' }}
+      />
       <div
         style={{
           display: 'flex',
@@ -30,7 +43,8 @@ export default function Aniversariantes({ data }: any) {
               Desejamos a todos os nossos irmãos e irmãs que fazem aniversário
               neste mês, uma vida de bençãos e muitas felicidades!
             </em>
-            <div className={styles.aniversariantes}
+            <div
+              className={styles.aniversariantes}
               style={{ marginTop: '15px' }}
               dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
             />
