@@ -15,6 +15,6 @@ A entrada é **gratuita**.
 
 Faça a inscrição preenchendo este [formulário aqui](https://forms.gle/h9xct9L1yJLHLpcX6).
 
-Mais informaçõe pelo telefone (22) 999724-9651.
+Mais informações pelo telefone (22) 999724-9651.
 
 Traga seu filho e sua filha para participar!
