@@ -14,24 +14,21 @@ export default function IBPGNews() {
   })
 
   useEffect(() => {
-    let orderedResult: any[] = []
 
     fetch(reqURL)
       .then(response => response.json())
       .then(result => {
-        console.log('RESULT IBPGNEWS--->', result)
-        result.items.filter((video: any) => video.title.match(/IBPG/gi))
-        .sort((a: any, b: any) => b.pubDate > a.pubDate)
-        setIbpgNews(result.items[0])
+        // console.log('RESULT IBPGNEWS--->', result)
+        let res = result.items.filter((video: any) => video.title.match(/IBPG/gi))
+        res.sort((a: any, b: any) => b.pubDate > a.pubDate)
+        // console.log('RES-->', res)
+        setIbpgNews(res[0])
       })
       .catch(error => {
         console.log(error)
       })
   }, [])
 
-  useEffect(() => {
-    console.log(ibpgNews)
-  }, [ibpgNews])
 
   return (
     <>
