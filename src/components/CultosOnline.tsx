@@ -46,7 +46,7 @@ export default function CultosOnline() {
           .slice(0, 4)
           .forEach(name => {
             last4cultos.push(
-              result.items.filter((item: any) => item.title === name && item.link !== liveUrl)[0]
+              result.items.filter((item: any) => item.title === name && item.link)[0]
             )
           })
         console.log('NAMES-->', names);
