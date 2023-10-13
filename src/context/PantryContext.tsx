@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { createContext } from 'react'
 
-const apiURL = process.env.GATSBY_API_URL
+// const apiURL = process.env.GATSBY_API_URL
+const apiURL = ''
 console.log('APIURL-->',apiURL);
 
 
