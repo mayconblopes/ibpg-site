@@ -3,7 +3,6 @@ import Navbar from './Navbar'
 import '../globals.css'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
-import { PantryContextProvider } from '../context/PantryContext'
 
 type LayoutProps = {
   children: React.ReactNode

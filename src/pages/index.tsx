@@ -10,8 +10,6 @@ import { graphql } from 'gatsby'
 import * as styles from './index.module.css'
 import Destaque from '../components/Destaque'
 import EventosCarrossel from '../components/EventosCarrossel'
-import { Modal, Typography } from '@mui/material'
-import { Box } from '@mui/system'
 import { PantryContextProvider } from '../context/PantryContext'
 
 export default function Home({ data }: any) {

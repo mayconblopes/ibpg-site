@@ -3,16 +3,23 @@ import { createContext } from 'react'
 
 const apiURL = process.env.GATSBY_API_URL
 
+export type EventoType = {
+  eventTitle: string,
+  eventDate: string,
+  eventHTML: string,
+  eventCover: string,
+}
+
 export type PantryContextType = {
   avisosFromPantry: string[]
-  eventosFromPantry: string[]
+  eventosFromPantry: EventoType[]
 }
 
 export const PantryContext = createContext({} as PantryContextType)
 
 export function PantryContextProvider({ children }: any) {
   const [avisosFromPantry, setAvisosFromPantry] = useState<Array<string>>([])
-  const [eventosFromPantry, setEventosFromPantry] = useState<Array<string>>([])
+  const [eventosFromPantry, setEventosFromPantry] = useState<Array<EventoType>>([])
 
   useEffect(() => {
       fetch(`${apiURL}/basket/ibpg_basket`)

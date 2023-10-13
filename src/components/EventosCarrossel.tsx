@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { useContext } from 'react'
 import MyCarousel from './MyCarousel'
 import { PantryContext, PantryContextType } from '../context/PantryContext'
@@ -21,6 +21,33 @@ export default function EventosCarrossel() {
   const [modalEventDate, setModalEventDate] = useState('')
   const [modalEventCover, setModalEventCover] = useState('')
   const [modalEventHTML, setModalEventHTML] = useState('')
+  const [eventNameFromURL, setEventNameFromURL] = useState(
+    window.location.href.split('?').pop() || ''
+  )
+
+  const context = useContext(PantryContext)
+
+
+  useEffect(() => {
+    setEventNameFromURL(window.location.href.split('?').pop() || '')
+    // console.log(context)
+    console.log('EVENTNAMEFROMURL', eventNameFromURL)
+
+    const eventFromURL = context.eventosFromPantry.filter(
+      evento =>
+        evento.eventTitle.toLocaleLowerCase().replace(' ', '-') ===
+        eventNameFromURL!
+    )[0]
+
+    if (eventFromURL) {
+      handleOpenModal(
+        eventFromURL.eventTitle,
+        eventFromURL.eventCover,
+        eventFromURL.eventHTML
+      )
+      setOpenModal(true)
+    }
+  }, [context])
 
   const markdownConverter = new showdown.Converter()
 
@@ -42,9 +69,11 @@ export default function EventosCarrossel() {
 
   function handleCloseModal() {
     setOpenModal(false)
+    if (eventNameFromURL.split('?').length > 0) {
+      setEventNameFromURL('')
+      window.history.pushState({}, document.title, '/')
+    }
   }
-
-  const context: PantryContextType = useContext(PantryContext)
 
   // local component
   function Evento({
@@ -56,6 +85,7 @@ export default function EventosCarrossel() {
     return (
       <Fragment>
         <Modal
+          id={`${modalEventTitle.replace(' ', '-').toLocaleLowerCase()}`}
           open={openModal}
           onClose={handleCloseModal}
           aria-labelledby='modal-modal-title'
@@ -96,26 +126,23 @@ export default function EventosCarrossel() {
                   padding: '20px',
                 }}
               >
-
-
-
-              <Typography
-                id='modal-modal-title'
-                variant='h6'
-                component='h2'
-                color={'white'}
-              >
-                {modalEventTitle}
-              </Typography>
-              <Typography id='modal-modal-description' color={'white'}>
-                {modalEventDate}
-              </Typography>
-              <div
-                className='beautifulWhiteText'
-                dangerouslySetInnerHTML={{
-                  __html: modalEventHTML,
-                }}
-              />
+                <Typography
+                  id='modal-modal-title'
+                  variant='h6'
+                  component='h2'
+                  color={'white'}
+                >
+                  {modalEventTitle}
+                </Typography>
+                <Typography id='modal-modal-description' color={'white'}>
+                  {modalEventDate}
+                </Typography>
+                <div
+                  className='beautifulWhiteText'
+                  dangerouslySetInnerHTML={{
+                    __html: modalEventHTML,
+                  }}
+                />
               </Box>
             </Box>
           </>
