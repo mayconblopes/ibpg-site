@@ -12,58 +12,57 @@ import Destaque from '../components/Destaque'
 import EventosCarrossel from '../components/EventosCarrossel'
 import { Modal, Typography } from '@mui/material'
 import { Box } from '@mui/system'
+import { PantryContextProvider } from '../context/PantryContext'
 
 export default function Home({ data }: any) {
   const avisos = data.allMarkdownRemark.nodes.filter(
     (node: any) => node.frontmatter.type === 'avisos'
   )[0]
 
-
   return (
     <Layout>
-     
-
       <Banner />
-      <div className={styles.indexContainer}>
-        <div className={styles.section}>
-          <EventosCarrossel />
-        
-        </div>
-        <div className={styles.section}>
-          <QuadroAvisos avisos={avisos} />
-        </div>
+      <PantryContextProvider>
+        <div className={styles.indexContainer}>
+          <div className={styles.section}>
+            <EventosCarrossel />
+          </div>
+          <div className={styles.section}>
+            <QuadroAvisos avisos={avisos} />
+          </div>
 
-        <div
-          className={styles.section}
-          style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-        >
-          <Destaque
-            title='Escola de Música Louvart'
-            banner='banner_louvart.webp'
-            linkTo='/louvart'
-          />
+          <div
+            className={styles.section}
+            style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
+          >
+            <Destaque
+              title='Escola de Música Louvart'
+              banner='banner_louvart.webp'
+              linkTo='/louvart'
+            />
 
-          <Destaque
-            title='Curso de Panificação'
-            banner='banner_panificacao.webp'
-            linkTo='/panificacao'
-          />
+            <Destaque
+              title='Curso de Panificação'
+              banner='banner_panificacao.webp'
+              linkTo='/panificacao'
+            />
 
-          <Destaque
-            title='Funcional Kids'
-            banner='banner_funcional.webp'
-            linkTo='/funcional'
-          />
+            <Destaque
+              title='Funcional Kids'
+              banner='banner_funcional.webp'
+              linkTo='/funcional'
+            />
+          </div>
+
+          <div className={styles.section}>
+            <IBPGNews />
+          </div>
+
+          <div className={styles.section}>
+            <CultosOnline />
+          </div>
         </div>
-
-        <div className={styles.section}>
-          <IBPGNews />
-        </div>
-
-        <div className={styles.section}>
-          <CultosOnline />
-        </div>
-      </div>
+      </PantryContextProvider>
     </Layout>
   )
 }

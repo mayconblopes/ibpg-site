@@ -28,7 +28,7 @@ export default function Layout({ children }: LayoutProps) {
     : `calc(100vh - 150px)`
 
   return (
-    <PantryContextProvider>
+    <>
         <Helmet>
           <html lang='pt-br' />
           <title>{data.site.siteMetadata.title}</title>
@@ -110,6 +110,6 @@ export default function Layout({ children }: LayoutProps) {
             </p>
           </footer>
         </div>
-    </PantryContextProvider>
+    </>
   )
 }

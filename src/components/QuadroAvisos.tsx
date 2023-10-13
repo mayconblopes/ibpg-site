@@ -15,23 +15,7 @@ export default function QuadroAvisos({ avisos }: QuadroAvisosProps) {
 
   //use of pantryAPI for avisos
   const context: PantryContextType = useContext(PantryContext)
-  console.log('CONTEXT AVISOS-->', context);
-  
-  
-  
-  // const [avisosFromPantry, setAvisosFromPantry] = useState([])
-  // useEffect(() => {
-  //   fetch(`${apiURL}/basket/ibpg_basket`)
-  //     .then(response => response.json())
-  //     .then(result => {
-  //       console.log('RESULT AVISO--->', result)
-  //       setAvisosFromPantry(result.avisos)
-  //       console.log('AVISOS FROM PANTRY', avisosFromPantry)
-  //     })
-  //     .catch(error => {
-  //       console.log(error)
-  //     })
-  // }, [])
+
 
   const markdownConverter = new showdown.Converter()
 

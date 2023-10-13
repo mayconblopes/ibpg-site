@@ -31,7 +31,6 @@ export default function CultosOnline() {
     fetch(reqURL)
       .then(response => response.json())
       .then(result => {
-        console.log('RESULT-->', result);
 
         names = result.items.map((item: any) => item.title)
 
@@ -49,7 +48,6 @@ export default function CultosOnline() {
               result.items.filter((item: any) => item.title === name && item.link)[0]
             )
           })
-        console.log('NAMES-->', names);
         
         setUltimos4cultos(last4cultos)
       })
@@ -58,9 +56,9 @@ export default function CultosOnline() {
       })
   }, [])
 
-  useEffect(() => {
-    console.log('ULTIMOS CULTOS-->',ultimos4cultos)
-  }, [ultimos4cultos])
+  // useEffect(() => {
+  //   console.log('ULTIMOS CULTOS-->',ultimos4cultos)
+  // }, [ultimos4cultos])
 
   return (
     <Fragment>

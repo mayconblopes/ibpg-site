@@ -45,7 +45,6 @@ export default function EventosCarrossel() {
   }
 
   const context: PantryContextType = useContext(PantryContext)
-  console.log('EVENTOSCARROSSEL CONTEXT', context)
 
   // local component
   function Evento({
