@@ -4,5 +4,5 @@
   </a>
 </p>
 <h1 align="center">
-  This is a simple website for a Christian church.
+  This is a simple website for a local Christian church.
 </h1>
