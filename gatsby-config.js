@@ -62,3 +62,5 @@ module.exports = {
   // this is for gh-pages deployment
   pathPrefix: "/ibpg-site"
 }
+
+

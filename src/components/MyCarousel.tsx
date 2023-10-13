@@ -1,7 +1,6 @@
 import React from 'react'
 import Carousel from 'react-material-ui-carousel'
 import { Paper, Button } from '@mui/material'
-import Evento, { EventoProps } from './Evento'
 import { Home } from '@mui/icons-material'
 import { fontSize, height } from '@mui/system'
 import SquareIcon from '@mui/icons-material/Square'

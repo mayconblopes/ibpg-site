@@ -1,20 +1,39 @@
-import { maxHeight } from '@mui/system'
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import * as styles from './quadroavisos.module.css'
 import MyCarousel from './MyCarousel'
-import Evento from './Evento'
-import Carousel from 'react-material-ui-carousel'
+import { PantryContext, PantryContextType } from '../context/PantryContext'
+import showdown from 'showdown'
 
 type QuadroAvisosProps = {
   avisos: any
 }
 
 export default function QuadroAvisos({ avisos }: QuadroAvisosProps) {
+  //use of graphQl for avisos
   let paragraphs = avisos.html
-  // paragraphs = paragraphs.replace(/[<p>\n]/g,'').replace(/<\/p>/g, '||')
-  // paragraphs = paragraphs.replace(/<[^>]*>/g, '')
   paragraphs = paragraphs.split('\n')
-  console.log(paragraphs)
+
+  //use of pantryAPI for avisos
+  const context: PantryContextType = useContext(PantryContext)
+  console.log('CONTEXT AVISOS-->', context);
+  
+  
+  
+  // const [avisosFromPantry, setAvisosFromPantry] = useState([])
+  // useEffect(() => {
+  //   fetch(`${apiURL}/basket/ibpg_basket`)
+  //     .then(response => response.json())
+  //     .then(result => {
+  //       console.log('RESULT AVISO--->', result)
+  //       setAvisosFromPantry(result.avisos)
+  //       console.log('AVISOS FROM PANTRY', avisosFromPantry)
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
+  // }, [])
+
+  const markdownConverter = new showdown.Converter()
 
   return (
     <div>
@@ -34,18 +53,29 @@ export default function QuadroAvisos({ avisos }: QuadroAvisosProps) {
               padding: '10px',
             }}
           />
+
           <MyCarousel
-            items={paragraphs.map((p: string, i: number) => (
-              <p
-                key={i}
-                className={styles.avisos}
-                style={{textAlign: 'center'}}
-              >
-                <div dangerouslySetInnerHTML={{ __html: p }}/>
-                </p>
-            ))}
-          >
-            </MyCarousel>
+            items={
+              //if paragraphs[0], then 'avisos' is defined in markdown file, so we have to use graphql instead of pantry API
+              paragraphs[0]
+                ? paragraphs.map((p: string, i: number) => (
+                    <div
+                      key={i}
+                      className={styles.avisos}
+                      style={{ textAlign: 'center' }}
+                      dangerouslySetInnerHTML={{ __html: p }}
+                    />
+                  ))
+                : context.avisosFromPantry.map((p: string, i: number) => (
+                    <div
+                      key={i}
+                      className={styles.avisos}
+                      style={{ textAlign: 'center' }}
+                      dangerouslySetInnerHTML={{ __html: markdownConverter.makeHtml(p) }}
+                    />
+                  ))
+            }
+          ></MyCarousel>
         </div>
       </div>
     </div>

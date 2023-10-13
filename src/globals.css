@@ -31,3 +31,27 @@ html, body {
     padding: 0;
     font-size: 14px;
 }
+
+
+.beautifulWhiteText p, .beautifulWhiteText strong, .beautifulWhiteText em, .beautifulWhiteText a {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: antiquewhite;
+}
+
+.beautifulWhiteText h1 {
+    font-size: 24px;
+    color: antiquewhite;
+}
+
+.beautifulWhiteText h2 {
+    font-size: 18px;
+    color: antiquewhite;
+}
+
+.beautifulWhiteText li, .beautifulWhiteText ul {
+    color: antiquewhite;
+    margin: 10px;
+    padding: 0;
+    font-size: 14px;
+}
