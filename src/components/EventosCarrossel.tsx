@@ -7,6 +7,7 @@ import * as styles from './evento.module.css'
 import { Modal, Typography } from '@mui/material'
 import { Box, color } from '@mui/system'
 import showdown from 'showdown'
+import makeHtml from '../utils/makeHtml'
 
 export type EventoProps = {
   eventTitle: string
@@ -35,7 +36,7 @@ export default function EventosCarrossel() {
       // console.log(context)
       console.log('EVENTNAMEFROMURL', eventNameFromURL)
 
-      const eventFromURL = context.eventosFromPantry.filter(
+      const eventFromURL = context.eventosFromPantry?.filter(
         evento =>
           evento.eventTitle.toLocaleLowerCase().replace(' ', '-') ===
           eventNameFromURL!
@@ -60,12 +61,7 @@ export default function EventosCarrossel() {
     ) {
       setModalEventTitle(eventTitle)
       setModalEventCover(eventCover)
-      setModalEventHTML(
-        eventHTML
-          .split('\n')
-          .map((line: string) => markdownConverter.makeHtml(line))
-          .join('\n')
-      )
+      setModalEventHTML(makeHtml(eventHTML))
       setOpenModal(true)
     }
 
@@ -177,11 +173,15 @@ export default function EventosCarrossel() {
     }
 
     return (
-      <MyCarousel
-        items={context.eventosFromPantry.map((evento: any, i: any) => (
-          <Evento key={i} {...evento} eventCover={evento.eventCover} />
-        ))}
-      />
+      <>
+        {context.eventosFromPantry && (
+          <MyCarousel
+            items={context.eventosFromPantry.map((evento: any, i: any) => (
+              <Evento key={i} {...evento} eventCover={evento.eventCover} />
+            ))}
+          />
+        )}
+      </>
     )
   }
   return <></>
