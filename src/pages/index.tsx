@@ -1,8 +1,6 @@
 import * as React from 'react'
-import { useContext, useEffect, useState } from 'react'
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
-import MyCarousel from '../components/MyCarousel'
 import QuadroAvisos from '../components/QuadroAvisos'
 import IBPGNews from '../components/IBPGNews'
 import CultosOnline from '../components/CultosOnline'
@@ -33,6 +31,12 @@ export default function Home({ data }: any) {
             className={styles.section}
             style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
           >
+            <Destaque
+              title='Blog IBPG'
+              banner='banner_ibpg_blog.webp'
+              linkTo='/blog'
+            />
+            
             <Destaque
               title='Escola de Música Louvart'
               banner='banner_louvart.webp'

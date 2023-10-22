@@ -25,6 +25,7 @@ export default function Navbar() {
           style={{ display: menuOpen ? 'flex' : 'none' }}
         >
           <Link to='/'>Home</Link>
+          <Link to='/blog'>Blog</Link>
           <Link to='/fotos'>Galeria de fotos</Link>
           {/* <Link to='/louvart'>Escola Louvart</Link> */}
           {/* <Link to='/panificacao'>Curso Panificação</Link> */}

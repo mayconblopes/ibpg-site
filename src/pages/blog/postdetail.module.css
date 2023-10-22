@@ -1,0 +1,22 @@
+.postTitle {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #272635;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.postContent {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.back {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}

@@ -9,13 +9,8 @@ type QuadroAvisosProps = {
 }
 
 export default function QuadroAvisos({ avisos }: QuadroAvisosProps) {
-  //use of graphQl for avisos
-  let paragraphs = avisos.html
-  paragraphs = paragraphs.split('\n')
-
   //use of pantryAPI for avisos
   const context: PantryContextType = useContext(PantryContext)
-
 
   const markdownConverter = new showdown.Converter()
 
@@ -38,28 +33,20 @@ export default function QuadroAvisos({ avisos }: QuadroAvisosProps) {
             }}
           />
 
-          <MyCarousel
-            items={
-              //if paragraphs[0], then 'avisos' is defined in markdown file, so we have to use graphql instead of pantry API
-              paragraphs[0]
-                ? paragraphs.map((p: string, i: number) => (
-                    <div
-                      key={i}
-                      className={styles.avisos}
-                      style={{ textAlign: 'center' }}
-                      dangerouslySetInnerHTML={{ __html: p }}
-                    />
-                  ))
-                : context.avisosFromPantry.map((p: string, i: number) => (
-                    <div
-                      key={i}
-                      className={styles.avisos}
-                      style={{ textAlign: 'center' }}
-                      dangerouslySetInnerHTML={{ __html: markdownConverter.makeHtml(p) }}
-                    />
-                  ))
-            }
-          ></MyCarousel>
+          {context.avisosFromPantry && (
+            <MyCarousel
+              items={context.avisosFromPantry.map((p: string, i: number) => (
+                <div
+                  key={i}
+                  className={styles.avisos}
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: markdownConverter.makeHtml(p),
+                  }}
+                />
+              ))}
+            />
+          )}
         </div>
       </div>
     </div>
