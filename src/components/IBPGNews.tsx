@@ -7,28 +7,29 @@ export default function IBPGNews() {
   //   'https://www.youtube.com/feeds/videos.xml?channel_id=UCbMDaos_DocqABRDVKcW23Q'
   // )
   // const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=${channelURL}`
-  const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=UCbMDaos_DocqABRDVKcW23Q`
+  // const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=UCbMDaos_DocqABRDVKcW23Q`
+  const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?playlist_id=PLyUOWLaRVGTUoTX5xjOeYLwut0iBaJ_Ix`
 
   const [ibpgNews, setIbpgNews] = useState({
     link: '',
   })
 
   useEffect(() => {
-
     fetch(reqURL)
       .then(response => response.json())
       .then(result => {
-        // console.log('RESULT IBPGNEWS--->', result)
-        let res = result.items.filter((video: any) => video.title.match(/IBPG/gi))
+        console.log('RESULT IBPGNEWS--->', result)
+        let res = result.items.filter((video: any) =>
+          video.title.match(/IBPG/gi)
+        )
         res.sort((a: any, b: any) => b.pubDate > a.pubDate)
-        // console.log('RES-->', res)
+        console.log('RES-->', res)
         setIbpgNews(res[0])
       })
       .catch(error => {
         console.log(error)
       })
   }, [])
-
 
   return (
     <>
@@ -55,21 +56,29 @@ export default function IBPGNews() {
             justifyContent: 'center',
           }}
         >
-          <iframe
-            height='100%'
-            src={`https://www.youtube.com/embed/${
-              ibpgNews.link.split('v=')[1]
-            }?rel=0`}
-            title='YouTube video player'
-            frameBorder='0'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-            allowFullScreen
-            style={{
-              borderRadius: '10px',
-              boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
-              maxWidth: '100%',
-            }}
-          ></iframe>
+          {ibpgNews ? (
+            <iframe
+              height='100%'
+              src={`https://www.youtube.com/embed/${
+                ibpgNews.link.split('v=')[1]
+              }?rel=0`}
+              title='YouTube video player'
+              frameBorder='0'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+              allowFullScreen
+              style={{
+                borderRadius: '10px',
+                boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+                maxWidth: '100%',
+              }}
+            ></iframe>
+          ) : (
+            <p>
+              No momento não foi possível obter automaticamente os dados do IBPG
+              News. Por favor, retorne mais tarde ou confira diretamente no
+              canal do YouTube da nossa Igreja.
+            </p>
+          )}
         </div>
       </div>
     </>

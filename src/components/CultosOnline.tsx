@@ -31,7 +31,6 @@ export default function CultosOnline() {
     fetch(reqURL)
       .then(response => response.json())
       .then(result => {
-
         names = result.items.map((item: any) => item.title)
 
         // remove duplicates
@@ -45,10 +44,12 @@ export default function CultosOnline() {
           .slice(0, 4)
           .forEach(name => {
             last4cultos.push(
-              result.items.filter((item: any) => item.title === name && item.link)[0]
+              result.items.filter(
+                (item: any) => item.title === name && item.link
+              )[0]
             )
           })
-        
+
         setUltimos4cultos(last4cultos)
       })
       .catch(error => {
@@ -85,46 +86,49 @@ export default function CultosOnline() {
           marginBottom: '20px',
         }}
       >
-        {ultimos4cultos.map((video, index) => (
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              padding: '15px',
-              boxSizing: 'border-box',
-            }}
-            key={index}
-          >
-            <iframe
-              src={`https://www.youtube.com/embed/${video.link.split('v=')[1]}?rel=0`}
-              title={video.title}
-              frameBorder='0'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-              allowFullScreen
-              style={{
-                margin: '5px',
-                borderRadius: '10px',
-                maxWidth: '100%',
-                boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
-              }}
-            ></iframe>
-            <p
-              style={{
-                fontWeight: 'bold',
-                fontSize: '12px',
-                color: '#fff',
-                width: '90%',
-                // marginBottom: '15px',
-                marginLeft: '5px',
-              }}
-            >
-              {video.title}
-            </p>
-          </div>
-        ))}
-
+        {ultimos4cultos.length > 0
+          ? ultimos4cultos.map((video, index) => (
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  padding: '15px',
+                  boxSizing: 'border-box',
+                }}
+                key={index}
+              >
+                <iframe
+                  src={`https://www.youtube.com/embed/${
+                    video.link.split('v=')[1]
+                  }?rel=0`}
+                  title={video.title}
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                  allowFullScreen
+                  style={{
+                    margin: '5px',
+                    borderRadius: '10px',
+                    maxWidth: '100%',
+                    boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+                  }}
+                ></iframe>
+                <p
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '12px',
+                    color: '#fff',
+                    width: '90%',
+                    // marginBottom: '15px',
+                    marginLeft: '5px',
+                  }}
+                >
+                  {video.title}
+                </p>
+              </div>
+            ))
+          : <p>No momento não foi possível obter automaticamente os dados dos últimos cultos. Por favor, retorne mais tarde ou confira diretamente no canal do YouTube da nossa Igreja.</p>}
         <Link
           to='https://www.youtube.com/@igrejabatistaemparqueguaru3181/streams'
           target='_blank'

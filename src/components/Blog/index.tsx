@@ -12,13 +12,13 @@ export default function BlogIndex(props: RouteComponentProps) {
 
   return (
     <>
-    {!readMode && 
-      <img
-        src='/banner_ibpg_blog.webp'
-        alt='ibpg blog'
-        style={{ width: '100%' }}
-      />
-    }
+      {!readMode && (
+        <img
+          src='/banner_ibpg_blog.webp'
+          alt='ibpg blog'
+          style={{ width: '100%' }}
+        />
+      )}
       {/* <h1 style={{ textAlign: 'center' }}>ÚLTIMOS POSTS</h1> */}
       <section className={styles.blogListContainer}>
         {context.postsFromPantry.map((post: any) => {
@@ -33,9 +33,9 @@ export default function BlogIndex(props: RouteComponentProps) {
             <div key={slug} className={styles.card}>
               <Link to={`/blog/${slug}`}>
                 <h2>{post.title}</h2>
+                <h3>Autor: {post.author}</h3>
+                <h3>Data: {post.pubDate}</h3>
               </Link>
-              <h3>Autor: {post.author}</h3>
-              <h3>Data: {post.pubDate}</h3>
             </div>
           )
         })}
