@@ -31,6 +31,7 @@ export default function Navbar() {
           {/* <Link to='/panificacao'>Curso Panificação</Link> */}
           <Link to='/aniversariantes'>Aniversariantes</Link>
           <Link to='/documentos'>Documentos</Link>
+          <Link to='/agenda'>Estrutura / Agenda</Link>
           <Link to='/sobre'>Sobre</Link>
           <img className={styles.logo} src={logo} alt='logo da IBPG' />
         </div>
