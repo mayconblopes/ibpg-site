@@ -108,7 +108,7 @@ export default function AgendaIBPG() {
             <a href='#calendario'>Calendário de Atividades</a>
           </li>
           <li>
-            <a href='#membros'>Rol de Membro</a>
+            <a href='#membros'>Rol de Membros</a>
           </li>
           <li>
             <a href='#regimento-interno'>Regimento Interno IBPG</a>
@@ -453,7 +453,7 @@ export default function AgendaIBPG() {
           <li>Diretoria Executiva</li>
           <li>Conselho Fiscal</li>
           <li>Líder de Cada Departamento / Ministério</li>
-          <li>Presidente das</li>
+          <li>Presidente das Organizações</li>
           <li>Ministério Diaconal</li>
           <li>Relatores de Comissões Permanentes</li>
         </ul>
@@ -652,6 +652,9 @@ export default function AgendaIBPG() {
         <h2>MCM - Jovem</h2>
         <p>Coordenadora Geral: Franciny Ramos Monteiro</p>
 
+        <h2>Jovens Casados</h2>
+        <p>Líderes: Fabiano Leite Colares e Cazuza Gomes dos Santos Colares</p>
+        
         <h2>Mensageiras do Rei</h2>
         <p>Presidente: Maria Clara Santos de Oliveira</p>
 
@@ -928,6 +931,7 @@ export default function AgendaIBPG() {
           <p>Matheus Vicente Sardinha Fernandes </p>
           <p>Maura Nascimento Cabral </p>
           <p>Mayara de Abreu Ribeiro </p>
+          <p>Maycon Barreto Lopes </p>
           <p>Michelle Pereira Rangel Alvarenga </p>
           <p>Mírian Rangel Gomes </p>
           <p>Moacir Lírio </p>
