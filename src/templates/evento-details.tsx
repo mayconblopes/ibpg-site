@@ -26,7 +26,7 @@ export default function EventoDetails({ data }: any) {
         <meta name='description' content={data.markdownRemark.html.replace(/<[^>]*>/g, '').slice(0, 300)} />
         
         {/* TODO change this fixed url to dynamic */}
-        <meta property='og:image' content={`https://igrejabatistapg.org/${coverFluid.src}`} />
+        <meta property='og:image' content={`https://ibpg.site/${coverFluid.src}`} />
         {/* <meta property='og:image' content={`${origin.replace(/https/, 'http')}${coverFluid.src}`} /> */}
       </Helmet>
       <div className={styles.container}>

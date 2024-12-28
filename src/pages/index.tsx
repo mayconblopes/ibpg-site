@@ -4,7 +4,7 @@ import Banner from '../components/Banner'
 import QuadroAvisos from '../components/QuadroAvisos'
 import IBPGNews from '../components/IBPGNews'
 import CultosOnline from '../components/CultosOnline'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import * as styles from './index.module.css'
 import Destaque from '../components/Destaque'
 import EventosCarrossel from '../components/EventosCarrossel'
@@ -20,45 +20,50 @@ export default function Home({ data }: any) {
       <Banner />
       <PantryContextProvider>
         <div className={styles.indexContainer}>
-          <div className={styles.section}>
+          {/* <div className={styles.section}>
             <EventosCarrossel />
           </div>
           <div className={styles.section}>
             <QuadroAvisos avisos={avisos} />
-          </div>
+          </div> */}
 
           <div
             className={styles.section}
             style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
           >
-            <Destaque
+
+          <Link to='/sobre'>Sobre</Link>
+          <Link to='/agenda'>Agenda</Link>
+          <Link to='/documentos'>Documentos</Link>
+          
+            {/* <Destaque
               title='Blog IBPG'
               banner='banner_ibpg_blog.webp'
               linkTo='/blog'
-            />
+            /> */}
             
-            <Destaque
+            {/* <Destaque
               title='Escola de Música Louvart'
               banner='banner_louvart.webp'
               linkTo='/louvart'
-            />
+            /> */}
 
-            <Destaque
+            {/* <Destaque
               title='Curso de Panificação'
               banner='banner_panificacao.webp'
               linkTo='/panificacao'
-            />
-
+            /> */}
+          {/* 
             <Destaque
               title='Funcional Kids'
               banner='banner_funcional.webp'
               linkTo='/funcional'
-            />
-          </div>
+          /> */}
+          </div> 
 
-          <div className={styles.section}>
+          {/* <div className={styles.section}>
             <IBPGNews />
-          </div>
+          </div> */}
 
           <div className={styles.section}>
             <CultosOnline />
