@@ -12,7 +12,7 @@ export default function Aniversariantes({ data }: any) {
         <meta name='description' content='Feliz aniversário, irmãos e irmãs!' />
         <meta
           property='og:image'
-          content={`http://igrejabatistapg.org/feliz_niver.webp`}
+          content={`http://ibpg.site/feliz_niver.webp`}
         />
       </Helmet>
       <img
