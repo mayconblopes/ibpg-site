@@ -50,6 +50,7 @@ jobs:
           else
             echo "Unable to determine package manager"
             exit 1
+          fi
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -83,10 +84,9 @@ jobs:
           GATSBY_EXTENDSCLASS_SECURITY_KEY: ${{secrets.GATSBY_EXTENDSCLASS_SECURITY_KEY}}
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
-          name: 'github-pages'
-          path: 'public/'
+          path: ./public
 
   # Deployment job
   deploy:
@@ -98,6 +98,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        uses: actions/deploy-pages@v4
