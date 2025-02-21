@@ -10,9 +10,9 @@ export default function AgendaIBPG() {
       </div>
 
       <div className={styles.agendaMainStyle}>
-        <h1>AGENDA 2024</h1>
+        <h1>AGENDA 2025</h1>
         <p>
-          Esta é a nossa estrutura organizacional e agenda para o ano de 2024.
+          Esta é a nossa estrutura organizacional e agenda para o ano de 2025.
         </p>
       </div>
 
@@ -30,7 +30,15 @@ export default function AgendaIBPG() {
       {/* introdução */}
       <div className={styles.intro + ' ' + styles.agendaMainStyle}>
         <h1>TEMA ANUAL</h1>
-        <p className={styles.tema}>"Vivamos o Verdadeiro Amor Em Um Novo Tempo"</p>
+        {/* <p className={styles.tema}>"IBPG, em 2025 cada membro um discípulo."</p> */}
+        <p style={{ textAlign: 'center' }}>
+
+          <img
+            className={styles.avatar}
+            src='/banner_tema_2025.jpg'
+            alt='tema para o ano de 2025'
+          />
+        </p>
 
         <h1>DIVISA</h1>
         <p className={styles.divisa}>
@@ -44,7 +52,7 @@ export default function AgendaIBPG() {
         <p>18:00 – DCC (Organizações)</p>
         <p>19:30 – Culto de Louvor e Adoração</p>
 
-        <h1>ALVOS DE MISSÕES PARA 2024</h1>
+        <h1>ALVOS DE MISSÕES PARA 2025</h1>
         <p>1. MISSÕES MUNDIAIS – R$10.000,00</p>
         <p>2. MISSÕES ESTADUAIS – R$ 4.000,00</p>
         <p>3. MISSÕES NACIONAIS – R$10.000,00</p>
@@ -125,48 +133,39 @@ export default function AgendaIBPG() {
         className={styles.palavraPastoral + ' ' + styles.agendaMainStyle}
       >
         <h1>PALAVRA PASTORAL</h1>
-        <h2>REFLEXÃO - PASTOR PRESIDENTE</h2>
-        <h2>Vivamos o verdadeiro amor em um novo tempo</h2>
-        <h3>
-          "Com isso todos saberão que vocês são meus discípulos, se vocês se
-          amarem uns aos outros". João 13:35
-        </h3>
+        <h2>DISCÍPULO DE PALAVRAS X DISCÍPULO DE AÇÃO</h2>
+        <h3>1º Coríntios 4:18-20.</h3>
 
         <p>
-          A nossa esperança é o Senhor, pois encontramos Nele o verdadeiro amor.
-          Estamos iniciando uma nova jornada, um novo tempo, onde é parte
-          obrigatória de todo crente em Jesus viver o amor em todas as suas
-          ações, levando a Palavra de esperança, alegria, paz e Salvação. É
-          necessário pedirmos sempre a Deus o amadurecimento do amor em nós para
-          que, como igreja do Senhor possamos fazer a diferença em um mundo que
-          vive uma escassez de amor.
+          Esse texto bíblico nos mostra que, desde o início do Cristianismo, 
+          há dois tipos de discípulos; o discípulo somente de palavras,  palavras vazias, 
+          praticado pelas pessoas soberbas, orgulhosas, sem amor ou compaixão e o discípulo 
+          de ação, poder e amor.
+
         </p>
 
         <p>
-          Supliquemos ao Senhor que Ele venha em socorro das nossas fraquezas no
-          trato com as pessoas, porque a qualidade do nosso amor que faz a
-          diferença no mundo onde a frieza dos relacionamentos humanos está
-          sufocada pelos relacionamentos virtuais. Podemos ter em nossa igreja
-          uma membresia farta em talentos e dons espirituais, capaz de realizar
-          feitos extraordinários em eventos, celebrações e organizações, mas se
-          não houver o amor de nada adianta (1º Coríntios 13:2b), de nada
-          adianta sermos uma igreja que carrega em seus adornos uma frase tão
-          bonita, porém pouco vivida em muitos de nós (“Uma Igreja que Ama e
-          Prega a Verdade”).
+        O DISCÍPULO SOMENTE DE PALAVRAS FAZ MUITAS PROMESSAS, MAS NÃO CUMPRE O PROMETIDO. Esse “DISCÍPULO” promete amizade, visita, bênçãos, oração, companherismo, dedicação, experiências maravilhosas etc., no entanto, estas promessas nunca se cumprem, fazendo com que as pessoas que vivem ao seu redor fiquem decepcionadas, frustradas e, infelizmente, afastadas da igreja e de Deus. Eles têm muita coragem para prometer, mas não têm força nem poder para cumprir o que prometem.
+
         </p>
 
         <p>
-          Só seremos reconhecidos como discípulos de Jesus se realmente existir
-          amor entre nós sem acepção de pessoas, a ponto das pessoas de fora da
-          igreja verem esse amor sendo praticado e reconhecer em nosso meio os
-          verdadeiros discípulos de Jesus. Não cabe a igreja reconhecer os
-          discípulos, cabe ao mundo, olhar para a igreja apontando os
-          verdadeiros discípulos que expressão um viver de amor para com os
-          irmãos. Que em 2024, os incrédulos olhem para a Igreja Batista em
-          Parque Guarus e vejam não somente um aglomerado de pessoas, mas um
-          grupo crescente de verdadeiros discípulos que vivem o verdadeiro amor
-          entre eles, e com autoridade moral, ética e espiritual pregam a
-          verdade.
+        O DISCÍPULO SOMENTE DE PALAVRAS FALA MUITO, MAS NÃO FAZ NADA. Esse “DISCÍPULO” diz que vai fazer e acontecer, que fez isso e aquilo, no entanto, não faz nada. Não faz nada para que as pessoas que caminham a passos largos para o inferno possam ter uma esperança, uma mudança de vida. As palavras deste “DISCÍPULO” destróem mais do que constrói, são lobos falantes jamais põe a mão no batente, jamais descem dos seus pedestais para ajudar, para amar ou discipular alguém de fato. O DISCÍPULO SOMENTE DE PALAVRAS  IMPRESSIONA, MAS NÃO AJUDA TRANSFORMAR NINGUÉM. Para que as pessoas não desconfiem que se trata de um “DISCÍPULO” de palavras vazias, eles capricham no falar. Falam muito bonito, voz imponente, sorriso estampado no rosto, fisionomia de vitorioso, porém cheio de julgamento e desprezo por dentro. Alguns usam vestimentas celestiais, colocam símbolos Bíblicos, falam palavras bonitas e decoram versículos bíblicos para aplicar em seus jugamentos terrenos, fazem orações públicas e quase que infinitas, expulsam, repreendem, determinam, mas, infelizmente, não focam na transformação de vidas humanas e em novos discípulos. Alguns até ganham uma bênção aqui e ali, chegam até a trocar de religião, mas não trocam de coração, não mudam de vida, não são convertidos genuínos, não se tornam verdadeiros discípulos porque não há amor neles, não querem fazer discípulos. O DISCÍPULO FIEL E VERDADEIRO É DIFERENTE. Ele é obediente a palavra de Deus (Jo. 14:21). Ele olha com um olhar de amor (não de julgamento) para os que vivem sem Deus (1º Jo. 4:8). Ele sabe perdoar verdadeiramente (Mt. 6:14-15). Ele dá a sua vida por amor ao evangelho (Lc. 9:23). Ele não se envergonha de ser UM DISCÍPULO (Rm. 1:16) (Lc. 9:26).
+
+        </p>
+
+        <p>
+        A Palavra do DISCÍPULO genuíno eleva a fé das pessoas (ao contrário do “DISCÍPULO” de palavras vazias, que destrói a fé). Pelas palavras e vida do discípulo genuíno e verdadeiro os pecadores são transformados em novas criaturas e salvos pela fé em Jesus.
+O “DISCÍPULO” de palavras vazias destrói a fé das pessoas e não se importa com  ninguém, é um religioso egoísta é só facilita o caminho para aqueles que vivem em direção ao inferno.
+
+        </p>
+        
+        <p>
+        O “DISCÍPULO” genuíno e fiel, é de poder (ele tem poder nas palavras e na vida), produz, aumenta, multiplica e trabalha para transformar o pecador em nova criatura. É um discipulador que sai fazendo discípulos e gerando frutos.
+        </p>
+
+        <p>
+Qual desses “DISCÍPULOS” queremos ser em 2025? Que você não escolha ser um discípulo de palavras vázias. Mas, que você seja um discípulo reconhecido pelas pessoas na prática da obediência, do amor e do perdão (Jo. 13:35).
         </p>
 
         <p className={styles.assinatura}>
@@ -181,156 +180,29 @@ export default function AgendaIBPG() {
 
       <hr />
 
-      {/* reflexao pr emerito */}
-      <div
-        id='palavra-pastoral-pr-emerito'
-        className={styles.palavraPastoral + ' ' + styles.agendaMainStyle}
-      >
-        <h1>PALAVRA PASTORAL</h1>
-        <h2>MEDITAÇÃO - PASTOR EMÉRITO</h2>
-        <h2>Vivamos o verdadeiro amor em um novo tempo</h2>
-        <h3>
-          "Com isso todos saberão que vocês são meus discípulos, se vocês se
-          amarem uns aos outros". João 13:35
-        </h3>
-
-        <p>
-          Este Tema me fez unir a expressão “Verdadeiro Amor”, com o pregar a
-          “Verdadeira mensagem do amor de Deus”, demonstrado em Cristo Jesus;
-          que se resume em “Igreja que ama e prega a verdade”.
-        </p>
-
-        <p>
-          O apóstolo João no texto citado como Divisa (13.35), cita o ensino de
-          Jesus, que é o Senhor de todos os tempos, e quer que os seus
-          verdadeiros discípulos se amem como seus verdadeiros seguidores.
-        </p>
-
-        <p>
-          Muitas pessoas pensam que teremos um “Novo Tempo”, em um futuro
-          distante; outros estão pregando que Ele, Jesus, já está voltando.
-          Teremos um novo tempo para pregar o evangelho de Jesus? Que diz a
-          Bíblia: “...se hoje ouvirdes a sua voz não endureçais os vossos
-          corações. A salvação é para hoje.
-        </p>
-        <p>
-          Fomos criados à imagem e semelhança do Criador. A nossa relação
-          primitiva com Deus era de comunhão pura e verdadeira. Deus falava com
-          a criatura e era ouvido. O pecado entrou na vida humana e essa
-          primeira relação teve fim. Mas Deus prometeu um novo tempo. Ele
-          enviaria o seu Filho, Jesus o Salvador.{' '}
-        </p>
-        <p>
-          Hoje, todos nós temos nova oportunidade. Temos o enviado do Pai, o
-          Criador, e ele próprio disse: “Eu sou o Bom Pastor, eu dou a minha
-          vida em resgate dos pecadores. O apóstolo João escreveu para que as
-          igrejas (o povo de Deus) conhecessem e proclamassem a vida eterna:
-          “Deus enviou o seu Filho ao mundo não para que condenasse o mundo, mas
-          para que o mundo fosse salvo por Ele”. (João 3.17).
-        </p>
-        <p>
-          Esta meditação não é uma mensagem evangelística, pode ser também, mas
-          é para toda igreja; é para cada crente. Como verdadeiros discípulos,
-          amem e proclamem o verdadeiro amor de Deus em Cristo Jesus.
-          Lembremo-nos que o Novo Tempo para nós é hoje, amanhã, o ano inteiro e
-          enquanto vivermos aqui na terra sob a graça e misericórdia do Senhor.
-        </p>
-        <p>
-          Finalmente, o crente dedicado à obra do Senhor: vive em comunhão com o
-          Mestre;obedece os mandamentos do Senhor; vive uma vida na prática do
-          Amor cristão e trabalha para produzir frutos para a glória de Deus.
-        </p>
-
-        <p>Tenham um Feliz 2024.</p>
-
-        <p className={styles.assinatura}>
-          Pastor Alceir Faria Pereira - Pr. Emérito
-          <img
-            className={styles.avatar}
-            src='/prAlceir-e-familia.png'
-            alt='Foto do Pastor Alceir e sua esposa'
-          />
-        </p>
-      </div>
-
-      <hr />
-
       {/* reflexao 1º vice presidente */}
       <div
         id='meditacao-1-vice'
         className={styles.palavraPastoral + ' ' + styles.agendaMainStyle}
       >
         <h1>REFLEXÃO – 1º VICE-PRESIDENTE</h1>
-        <h2>Vivamos o verdadeiro amor em um novo tempo</h2>
-        <h3>
-          "Com isso todos saberão que vocês são meus discípulos, se vocês se
-          amarem uns aos outros". João 13:35
-        </h3>
+        <h2>IBPG: em 2025, cada Membro um Discípulo.</h2>
 
         <p>
-          Hoje se fala muito em amor. Na verdade, o mundo de hoje está bem
-          desproporcional em relação ao amor que tanto se fala. Há um esforço
-          exacerbado da sociedade atual ao falar do amor, mas infelizmente, todo
-          esse esforço não é percebido na prática. Vivemos um tempo onde tem se
-          enfatizado, por exemplo, campanhas de conscientização relacionadas ao
-          feminismo, homofobia e algumas outras questões, onde temos o subtema
-          do amor inseridos como pano de fundo. Mas até aqui, falei do amor que
-          o mundo sem Jesus vive.
+        Para o ano de 2025, estamos sendo encorajados, como igreja Batista em Parque Guarus, a desenvolvermos uma vida Cristã baseada em um dos princípios elementares dos ensinos de Jesus: O discipulado. Nosso tema anual, leva-nos a refletir sobre a seguinte questão: Somos apenas membros ou discípulos? De início, parece até uma pergunta insignificante, onde a resposta tende a ser bem óbvia. Mas fazendo uma leitura um pouco mais profunda, podemos perceber que nos dias atuais, a igreja tem se perdido um pouco em meio a veracidade das escrituras sagradas, onde valores que deveriam ser inegociáveis tem se dissolvido de forma bem sutil. Jesus nos ensinou claramente o que é ser discípulo.
+
         </p>
 
         <p>
-          Um amor que é anunciado, mas não é vivido. Um amor que defende
-          movimentos sem bases bíblicas. O verdadeiro amor que hoje venho
-          apresentar, não é esse falso amor que a sociedade diz existir e ser
-          verdadeiro. Mas para falarmos do verdadeiro amor, se faz necessário
-          trazer Jesus para o nosso contexto. A Bíblia nos fala o seguinte:
+        Olha o que Ele diz em Lucas 9:23 e 14:27 “E dizia a todos: Se alguém quer vir após mim, negue-se a si mesmo, e tome cada dia a sua cruz, e siga-me.”
         </p>
 
         <p>
-          Amados, amemo-nos uns aos outros; porque o amor é de Deus; e qualquer
-          que ama é nascido de Deus e conhece a Deus. Aquele que não ama não
-          conhece a Deus; porque Deus é amor. (1 João 4.7-8)
+        “E aquele que não carrega sua cruz e não me segue não pode ser meu discípulo.” Jesus nos ensina que ser discípulo é negar-se a si mesmo, carregar a sua cruz e segui-lo verdadeiramente! Não é sobre nós, mas sobre Ele, o nosso Mestre! No Evangelho de Mateus, no capítulo 28, versículo 19 encontramos uma ordem de Jesus: “Portanto ide, fazei discípulos de todas as nações...” 
         </p>
         <p>
-          O amor agora em questão, é diferente do “amor” que tratamos até agora.
-          Existe uma relevância quando trazemos Jesus para o tema amor. Essa
-          perícope bíblica nos revela com exatidão alguns fundamentos do amor,
-          sendo assim, quero fazer dois destaques:
-        </p>
-        <p>
-          1-Devemos amar uns aos outros; 2-Quem ama é nascido de Deus e conhece
-          a Deus.
-        </p>
-        <p>
-          Diante dos destaques apresentados, surge uma pergunta: A igreja hoje
-          tem vivido verdadeiramente o Amor? A Igreja é constituída de pessoas
-          imperfeitas, regeneradas e dotadas do novo nascimento em Cristo Jesus,
-          onde se tornaram filhos de Deus. Sendo assim, o texto lido nos remete
-          a definição acima descrita, como Igreja, somos filhos de Deus e por
-          isso amamos verdadeiramente o nosso semelhante e principalmente a
-          Deus.
-        </p>
-        <p>
-          Mas o que seria amar verdadeiramente a Deus e ao meu próximo? Ir aos
-          cultos aos domingos? Cumprimentar o irmão no momento de louvor?
-          Queridos, isso precisa levar-nos á uma importante reflexão. Sendo
-          filhos de Deus (Igreja) o amor deve ser algo natural exalando dos
-          nossos corações. Apóstolo Paulo exortando a Igreja em Roma, diz que o
-          amor deve não ser com fingimento. E ainda completa dizendo que
-          precisamos amar cordialmente uns aos outros. Que coisa linda!
-        </p>
+        O texto é uma ordenança bem clara aos seus discípulos para fazerem novos discípulos! Exatamente aqui é onde a Igreja atual tem se perdido. A religiosidade tem levado a Igreja a ser composta apenas de membros. Como um clube. Os interesses são particulares, parecendo um comércio, onde as bençãos são consumidas, os cultos são consumidos, a mensagem, os louvores, toda a liturgia passa a funcionar como um “Balcão de comércio” onde um público bem exigente deseja sempre o melhor onde nunca devem ser constrangidos ou exortados, pois se assim for, procuram outra “igreja”. O sangue derramado na Cruz, o sacrifício do cordeiro santo de Deus, a morte do mestre na cruz do calvário para que os nossos pecados fossem apagados e então pudéssemos ser discípulos parece ter sido esquecidos pela Igreja atual! Lembramos até em alguns momentos, como no período dos Cânticos, mas não vivemos de fato. E então, nos tornamos simples membros. O mesmo Jesus afirma em João 8;31 “Se vós permanecerdes na minha palavra, verdadeiramente sereis meus discípulos;” A palavra precisa ser novamente lida e vivida. Precisamos voltar a nos alimentarmos verdadeiramente da palavra, e consequentemente retornarmos a uma vida de verdadeiros discípulos, ou seja, verdadeiros seguidores de Jesus Cristo, onde a sua palavra será por cada membro lida e vivida, e assim cumpriremos Mateus 28:19-20 resultando no avanço sadio da Igreja e fazendo novos discípulos do Senhor Jesus.
 
-        <p>
-          É muito mais que bater nas costas e dizer que vai orar pelo irmão que
-          está desempregado, mas é perguntar se precisa de um pacote de arroz. É
-          muito mais que marcar presença na EBD ou no culto da noite, mas é
-          mover o coração de Deus, é ter relacionamento profundo com o mestre.
-        </p>
-        <p>
-          Amados, que o exemplo de Jesus Cristo, possa ser a nossa bússola para
-          avançarmos como Igreja em um tempo tão difícil... a escolha é sua.
-          Você esta disposto a viver o verdadeiro amor? Então junte-se a nós e
-          de mãos dadas vamos viver um novo tempo!
         </p>
 
         <p className={styles.assinatura}>
@@ -351,41 +223,12 @@ export default function AgendaIBPG() {
         className={styles.palavraPastoral + ' ' + styles.agendaMainStyle}
       >
         <h1>REFLEXÃO – 2º VICE-PRESIDENTE</h1>
-        <h2>Vivamos o verdadeiro amor em um novo tempo</h2>
-        <h3>
-          "Com isso todos saberão que vocês são meus discípulos, se vocês se
-          amarem uns aos outros". João 13:35
-        </h3>
+        <h2>Como ser discipulo nos dias atuais</h2>
 
-        <p>Saúdo a Igreja com a graça e a paz do nosso Senhor Jesus Cristo</p>
-
-        <p>
-          É motivo de gratidão a Deus em poder iniciar mais um ano sob Seus
-          cuidados, pois temos a certeza de que ELE esteve, está e sempre estará
-          cuidando do Seu povo. “ Viver o verdadeiro Amor em Um Novo Tempo é
-          algo imprescindível para nós, pois uma vez alcançado e transformado
-          por esse o Amor, é preciso que seja evidenciado em nossas vidas, em
-          nossa caminhada com o Senhor. “ E assim, se alguém está em Cristo, é
-          nova criatura; as coisas antigas já passaram; eis que se fizeram
-          novas”( 2Co 5:17). Como igreja, precisamos continuar avançando e
-          crescendo para glória de Deus.
-        </p>
-
-        <p>
-          O apóstolo Paulo escrevendo aos Colossenses no capitulo 3:1-2 e 3:17
-          nos diz “Portanto, se fostes ressuscitados juntamente com Cristo,
-          buscai as coisas lá do alto, onde Cristo vive, assentado à direita de
-          Deus. Pensai nas coisas lá do alto, não nas que são aqui da terra.“ E
-          tudo que fizerdes, seja em palavra, seja em ação, fazei-o em nome do
-          Senhor Jesus, dando por Ele graças a Deus Pai”.
-        </p>
-        <p>
-          omo igreja é motivo de gratidão a Deus pelo ano de 2023 e já
-          agradecemos a Deus pelo ano de 2024, pois temos a certeza de que nosso
-          Deus continuará cuidando e usando nossas vidas para mostrar ao mundo o
-          que é “ Viver o Verdadeiro Amor, Em Um novo Tempo.
-        </p>
-        <p>Que Deus nos abençoe, e que vivamos para glorificar o nome DELE.</p>
+        <p>Uma definição mais direta do que é ser discipulo: caminhar com Jesus, aprender de Jesus e cada dia ser mais semelhante a Jesus.Hoje Jesus nos orienta através das Escrituras e do Espirito Santo que habita em nós, glória a Deus por isso, mas preciso lembrar aos leitores que Ser discipulo não é religiosidade, não é frequência aos cultos, não é ativismo, não é estrelismo, não é buscar nosso proprio interesse. </p>
+        <p>Gálatas 2:20” logo, já não sou eu quem vive, mas Cristo vive em mim; e esse viver que, agora, tenho na carne, vivo pela fé no Filho de Deus, que me amou e a si mesmo se entregou por mim”. Paulo nos deixou grandes lições do que é ser discipulo, mesmo sendo pecador como nós. Filipenses 1:21” Porquanto, para mim, o viver é Cristo, e o morrer é lucro.” Todos nós conhecemos a história desse homem de Deus.</p>
+        <p>Em Atos os discipulos foram chamados pela primeira véz de cristãos, isso foi extraordinário, maravilhoso, pois mesmo em meio a grande perseguição da igreja aqueles irmão foram vistos pelas pessoas como “diferente”, era o AMOR. o FERVOR, o ESPIRITO SANTO atuando de forma tremenda na vida deles, o que refletia no testemunho. Hoje o que me preocupa é que temos visto muitos lideres relativisar e fechar os olhos para muitas coisas na igreja do Senhor, o ser discipulo nos dias atuais está bem diferente do ser discipulo nos dias de Jesus, essa triste realidade tem crescido de forma avassaladora nas igrejas. </p>
+        <p>Hoje o que temos visto e ouvido é que “ precisamos avaliar o contexto atual e vê se realmente a “biblia está correta”, talvez não seja isso que ela “ a bíblia” está querendo dizer. A biblia é a revelação de Deus para nós, não têm erro. Fico a pensar!! então o errado nos dias de Jesus, agora não é mais? O pecado nos dias de  Jesus agora não é mais? A idolatria nos dias de Jesus , agora não é mais? A prostituição nos dias de Jesus, agora não é mais? A falsidade nos dias de Jesus , agora não é mais? As falsas doutrinas nos dias de Jesus , agora não é mais? Aos amados leitores e irmãos, ser discipulo nos dias atuais não pode ser diferente dos dias de Jesus, pois Jesus é o mesmo, e ELE vive, e através do Espirito Santo que habita em cada discipulo precisamos viver para anunciar que há salvação em Jesus Cristo, que morreu e ressuscitou por cada um de nós. Romanos 12:1-2 Rogo-vos, pois, irmãos, pelas misericórdias de Deus, que apresenteis o vosso corpo por sacrifício vivo, santo e agradável a Deus, que é o vosso culto racional.2 E não vos conformeis com este século, mas transformai-vos pela renovação da vossa mente, para que experimenteis qual seja a boa, agradável e perfeita vontade de Deus.</p>
 
         <p className={styles.assinatura}>
           Uarli Rodrigues dos Santos
@@ -499,7 +342,7 @@ export default function AgendaIBPG() {
         <p>Líder: Jaiany dos Santos Gomes Silva</p>
 
         <h2>Publicidade</h2>
-        <p>Líder: Maycon Barreto Lopes</p>
+        <p>Líder: Kamilly de Paula Galdencio </p>
 
         <h2>Ornamentação</h2>
         <p>Líder: Edilza Rodrigues dos Santos</p>
@@ -654,7 +497,7 @@ export default function AgendaIBPG() {
 
         <h2>Jovens Casados</h2>
         <p>Líderes: Fabiano Leite Colares e Cazuza Gomes dos Santos Colares</p>
-        
+
         <h2>Mensageiras do Rei</h2>
         <p>Presidente: Maria Clara Santos de Oliveira</p>
 
@@ -686,10 +529,10 @@ export default function AgendaIBPG() {
         id='calendario'
         className={styles.agendaMainStyle + ' ' + styles.calendario}
       >
-        <h1>CALENDÁRIO DE ATIVIDADES PARA 2024</h1>
+        <h1>CALENDÁRIO DE ATIVIDADES PARA 2025</h1>
         <a
           target='_blank'
-          href='/calendario-2024.pdf'
+          href='/calendario-2025.pdf'
           style={{ alignSelf: 'center' }}
         >
           Clique aqui
