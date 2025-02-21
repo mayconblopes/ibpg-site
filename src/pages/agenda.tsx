@@ -76,11 +76,6 @@ export default function AgendaIBPG() {
             </a>
           </li>
           <li>
-            <a href='#palavra-pastoral-pr-emerito'>
-              Palavra Pastoral – Pr. Emérito Alceir F. Pereira
-            </a>
-          </li>
-          <li>
             <a href='#meditacao-1-vice'>
               Meditação 1º Vice-Presidente – Sem. Luis André
             </a>
